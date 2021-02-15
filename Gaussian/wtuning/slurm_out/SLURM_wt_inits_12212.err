@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "wtuning.py", line 11, in <module>
+    job.mol = job.geo_opt()
+  File "/home/rdu230/.conda/envs/myenv/lib/python3.8/site-packages/ocelot-0.2-py3.8.egg/ocelot/task/wtuning.py", line 140, in geo_opt
+    fnin = gauss_in_gen(
+  File "/home/rdu230/.conda/envs/myenv/lib/python3.8/site-packages/ocelot-0.2-py3.8.egg/ocelot/task/wtuning.py", line 34, in gauss_in_gen
+    mol_in = GaussianInput(mol, charge=charge, spin_multiplicity=spin, functional=func, basis_set=basis,
+  File "/home/rdu230/.conda/envs/myenv/lib/python3.8/site-packages/pymatgen/io/gaussian.py", line 139, in __init__
+    raise ValueError(
+ValueError: Charge of 0 and spin multiplicity of 1 is not possible for this molecule
+
+real	0m1.539s
+user	0m0.944s
+sys	0m0.309s

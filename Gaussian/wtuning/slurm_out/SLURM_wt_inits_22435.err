@@ -1,0 +1,6 @@
+/home/rdu230/.conda/envs/myenv/lib/python3.8/site-packages/ocelot-0.2-py3.8.egg/ocelot/task/wtuning.py:165: UserWarning: tuning cycle went over max cycles
+  warnings.warn('tuning cycle went over max cycles')
+
+real	5814m49.652s
+user	45948m18.757s
+sys	14m40.378s

@@ -1,0 +1,20 @@
+Job 22434 running on SLURM NODELIST: gnode020 
+Job started at : Mon Jan 25 19:01:28 EST 2021
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/gaussian/wtuning/mol_ta_cp_half
+ 
+ Func-count     x          f(x)          Procedure
+    1       0.221885     0.328156        initial
+    2       0.328115      0.86909        golden
+    3       0.156231     0.127565        golden
+    4       0.115654     0.481524        golden
+    5        0.17528    0.0178929        parabolic
+    6       0.180979    0.0591823        parabolic
+    7       0.171234    0.0121717        parabolic
+    8       0.172075    0.0055484        parabolic
+    9       0.173013   0.00107975        parabolic
+   10       0.173879   0.00771361        golden
+   11        0.17268   0.00103948        parabolic
+
+Optimization terminated successfully;
+The returned value satisfies the termination criteria
+(using xtol =  0.001 )

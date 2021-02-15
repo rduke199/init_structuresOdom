@@ -1,0 +1,17 @@
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_NN_ma_frag
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_bp_cp_half
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_NN_cp_frag
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_cp_half
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_bp_pa_half
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_bp_NN_frag
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_ma_whol
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_bp_ma_half
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_pa_whol
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_bp_pa_whol
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_NN_pa_frag
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_pa_half
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_ma_half
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_cp_whol
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_bp_cp_whol
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_NN_frag
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_bp_ma_whol

@@ -1,0 +1,998 @@
+ Entering Gaussian System, Link 0=g16
+ Input=mol_bp_cp_whol_tune_n1.gjf
+ Output=mol_bp_cp_whol_tune_n1.log
+ Initial command:
+ /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l1.exe "/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/gaussian/wtuning/mol_bp_cp_whol/tuning_mol_bp_cp_whol_ocycle0/Gau-39154.inp" -scrdir="/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/gaussian/wtuning/mol_bp_cp_whol/tuning_mol_bp_cp_whol_ocycle0/"
+ Entering Link 1 = /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l1.exe PID=     39155.
+  
+ Copyright (c) 1988,1990,1992,1993,1995,1998,2003,2009,2016,
+            Gaussian, Inc.  All Rights Reserved.
+  
+ This is part of the Gaussian(R) 16 program.  It is based on
+ the Gaussian(R) 09 system (copyright 2009, Gaussian, Inc.),
+ the Gaussian(R) 03 system (copyright 2003, Gaussian, Inc.),
+ the Gaussian(R) 98 system (copyright 1998, Gaussian, Inc.),
+ the Gaussian(R) 94 system (copyright 1995, Gaussian, Inc.),
+ the Gaussian 92(TM) system (copyright 1992, Gaussian, Inc.),
+ the Gaussian 90(TM) system (copyright 1990, Gaussian, Inc.),
+ the Gaussian 88(TM) system (copyright 1988, Gaussian, Inc.),
+ the Gaussian 86(TM) system (copyright 1986, Carnegie Mellon
+ University), and the Gaussian 82(TM) system (copyright 1983,
+ Carnegie Mellon University). Gaussian is a federally registered
+ trademark of Gaussian, Inc.
+  
+ This software contains proprietary and confidential information,
+ including trade secrets, belonging to Gaussian, Inc.
+  
+ This software is provided under written license and may be
+ used, copied, transmitted, or stored only in accord with that
+ written license.
+  
+ The following legend is applicable only to US Government
+ contracts under FAR:
+  
+                    RESTRICTED RIGHTS LEGEND
+  
+ Use, reproduction and disclosure by the US Government is
+ subject to restrictions as set forth in subparagraphs (a)
+ and (c) of the Commercial Computer Software - Restricted
+ Rights clause in FAR 52.227-19.
+  
+ Gaussian, Inc.
+ 340 Quinnipiac St., Bldg. 40, Wallingford CT 06492
+  
+  
+ ---------------------------------------------------------------
+ Warning -- This program may not be used in any manner that
+ competes with the business of Gaussian, Inc. or will provide
+ assistance to any competitor of Gaussian, Inc.  The licensee
+ of this program is prohibited from giving any competitor of
+ Gaussian, Inc. access to this program.  By using this program,
+ the user acknowledges that Gaussian, Inc. is engaged in the
+ business of creating and licensing software in the field of
+ computational chemistry and represents and warrants to the
+ licensee that it is not a competitor of Gaussian, Inc. and that
+ it will not use this program in any manner prohibited above.
+ ---------------------------------------------------------------
+  
+
+ Cite this work as:
+ Gaussian 16, Revision A.03,
+ M. J. Frisch, G. W. Trucks, H. B. Schlegel, G. E. Scuseria, 
+ M. A. Robb, J. R. Cheeseman, G. Scalmani, V. Barone, 
+ G. A. Petersson, H. Nakatsuji, X. Li, M. Caricato, A. V. Marenich, 
+ J. Bloino, B. G. Janesko, R. Gomperts, B. Mennucci, H. P. Hratchian, 
+ J. V. Ortiz, A. F. Izmaylov, J. L. Sonnenberg, D. Williams-Young, 
+ F. Ding, F. Lipparini, F. Egidi, J. Goings, B. Peng, A. Petrone, 
+ T. Henderson, D. Ranasinghe, V. G. Zakrzewski, J. Gao, N. Rega, 
+ G. Zheng, W. Liang, M. Hada, M. Ehara, K. Toyota, R. Fukuda, 
+ J. Hasegawa, M. Ishida, T. Nakajima, Y. Honda, O. Kitao, H. Nakai, 
+ T. Vreven, K. Throssell, J. A. Montgomery, Jr., J. E. Peralta, 
+ F. Ogliaro, M. J. Bearpark, J. J. Heyd, E. N. Brothers, K. N. Kudin, 
+ V. N. Staroverov, T. A. Keith, R. Kobayashi, J. Normand, 
+ K. Raghavachari, A. P. Rendell, J. C. Burant, S. S. Iyengar, 
+ J. Tomasi, M. Cossi, J. M. Millam, M. Klene, C. Adamo, R. Cammi, 
+ J. W. Ochterski, R. L. Martin, K. Morokuma, O. Farkas, 
+ J. B. Foresman, and D. J. Fox, Gaussian, Inc., Wallingford CT, 2016.
+ 
+ ******************************************
+ Gaussian 16:  EM64L-G16RevA.03 25-Dec-2016
+                26-Jan-2021 
+ ******************************************
+ %mem=30GB
+ %nproc=8
+ Will use up to    8 processors via shared memory.
+ ----------------------------------------------------------------------
+ #P LC-wHPBE/TZVP iop(3/107=0328100000, 3/108=0328100000) scf=(conver=6
+ ,fermi,ndamp=35,noincfock,novaracc,vshift=500,xqc)
+ ----------------------------------------------------------------------
+ 1/38=1,172=1/1;
+ 2/12=2,17=6,18=5,40=1/2;
+ 3/5=19,7=101,11=2,25=1,30=1,74=-71,107=328100000,108=328100000/1,2,3;
+ 4//1;
+ 5/5=100002,6=6,8=3,10=500,13=1,18=-1,22=13,38=1,93=35/2,8;
+ 6/7=2,8=2,9=2,10=2,28=1/1;
+ 99/5=1,9=1/99;
+ Leave Link    1 at Tue Jan 26 04:09:18 2021, MaxMem=  4026531840 cpu:               2.2 elap:               0.3
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l101.exe)
+ ----------
+ H32 C26 N4
+ ----------
+ Symbolic Z-matrix:
+ Charge =  2 Multiplicity = 1
+ C                    -2.82396   0.44426   1.1118 
+ C                    -3.52491   0.0001    0. 
+ C                    -1.4473    0.43809   1.11076 
+ C                    -2.82397  -0.44405  -1.11184 
+ C                    -0.74022   0.00011  -0.00003 
+ C                    -1.44733  -0.43786  -1.11083 
+ H                    -0.91446   0.79777   1.98099 
+ H                    -3.35536  -0.78359  -1.99104 
+ H                    -0.91449  -0.79749  -1.98108 
+ C                     0.74023   0.00011  -0.00002 
+ C                     1.44738   0.4375   -1.11099 
+ C                     1.44726  -0.43732   1.11104 
+ C                     2.82403   0.44367  -1.11194 
+ C                     2.82391  -0.44354   1.11214 
+ C                     3.52491   0.00003   0.00013 
+ H                     0.91461   0.79671  -1.98145 
+ H                     0.91437  -0.79652   1.98143 
+ H                     3.35548   0.7828   -1.99127 
+ H                     3.35525  -0.78265   1.99154 
+ H                    -3.35532   0.78382   1.99101 
+ C                     4.97514   0.00003   0.00015 
+ C                     6.14652  -0.56505   0.40804 
+ C                     6.14645   0.56505  -0.40802 
+ N                     6.78098  -1.4917    1.06686 
+ N                     6.78084   1.4916   -1.06704 
+ C                     6.05796  -2.59105   1.68458 
+ H                     6.15471  -2.5451    2.76836 
+ H                     5.00888  -2.54463   1.41084 
+ H                     6.46463  -3.53732   1.33227 
+ C                     8.22873  -1.51828   1.18614 
+ H                     8.49448  -1.77538   2.2091 
+ H                     8.65944  -2.25911   0.51335 
+ H                     8.64294  -0.53977   0.96883 
+ C                     6.05773   2.59109  -1.68442 
+ H                     6.15319   2.54465  -2.7683 
+ H                     5.00894   2.54539  -1.40943 
+ H                     6.46533   3.53727  -1.33296 
+ C                     8.22863   1.51811  -1.18629 
+ H                     8.49423   1.77961  -2.20815 
+ H                     8.65984   2.25583  -0.51039 
+ H                     8.64247   0.53843  -0.97354 
+ C                    -4.97511   0.00008   0.00003 
+ C                    -6.14653   0.56508   0.40792 
+ C                    -6.1464   -0.56515  -0.40795 
+ N                    -6.78107   1.4917    1.06671 
+ N                    -6.78073  -1.49193  -1.0667 
+ C                    -6.0582    2.59131   1.68413 
+ H                    -6.15455   2.54541   2.76795 
+ H                    -5.0092    2.54525   1.41002 
+ H                    -6.46532   3.53742   1.33191 
+ C                    -8.22886   1.51815   1.1858 
+ H                    -8.4947    1.77695   2.2083 
+ H                    -8.65972   2.25774   0.51173 
+ H                    -8.64281   0.53915   0.9702 
+ C                    -6.05756  -2.59137  -1.68411 
+ H                    -6.15307  -2.54496  -2.76798 
+ H                    -5.00878  -2.54563  -1.40912 
+ H                    -6.46512  -3.53756  -1.33261 
+ C                    -8.2285   -1.51858  -1.18594 
+ H                    -8.49414  -1.77911  -2.20805 
+ H                    -8.65952  -2.25704  -0.51073 
+ H                    -8.64252  -0.53921  -0.97216 
+ 
+ ITRead=  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ ITRead=  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ ITRead=  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0
+ ITRead=  0  0
+ MicOpt= -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+ MicOpt= -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+ MicOpt= -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+ MicOpt= -1 -1
+ NAtoms=     62 NQM=       62 NQMF=       0 NMMI=      0 NMMIF=      0
+                NMic=       0 NMicF=      0.
+                    Isotopes and Nuclear Properties:
+ (Nuclear quadrupole moments (NQMom) in fm**2, nuclear magnetic moments (NMagM)
+  in nuclear magnetons)
+
+  Atom         1           2           3           4           5           6           7           8           9          10
+ IAtWgt=          12          12          12          12          12          12           1           1           1          12
+ AtmWgt=  12.0000000  12.0000000  12.0000000  12.0000000  12.0000000  12.0000000   1.0078250   1.0078250   1.0078250  12.0000000
+ NucSpn=           0           0           0           0           0           0           1           1           1           0
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   2.7928460   2.7928460   2.7928460   0.0000000
+ AtZNuc=   6.0000000   6.0000000   6.0000000   6.0000000   6.0000000   6.0000000   1.0000000   1.0000000   1.0000000   6.0000000
+
+  Atom        11          12          13          14          15          16          17          18          19          20
+ IAtWgt=          12          12          12          12          12           1           1           1           1           1
+ AtmWgt=  12.0000000  12.0000000  12.0000000  12.0000000  12.0000000   1.0078250   1.0078250   1.0078250   1.0078250   1.0078250
+ NucSpn=           0           0           0           0           0           1           1           1           1           1
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   2.7928460   2.7928460   2.7928460   2.7928460   2.7928460
+ AtZNuc=   6.0000000   6.0000000   6.0000000   6.0000000   6.0000000   1.0000000   1.0000000   1.0000000   1.0000000   1.0000000
+
+  Atom        21          22          23          24          25          26          27          28          29          30
+ IAtWgt=          12          12          12          14          14          12           1           1           1          12
+ AtmWgt=  12.0000000  12.0000000  12.0000000  14.0030740  14.0030740  12.0000000   1.0078250   1.0078250   1.0078250  12.0000000
+ NucSpn=           0           0           0           2           2           0           1           1           1           0
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   2.0440000   2.0440000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    0.0000000   0.0000000   0.0000000   0.4037610   0.4037610   0.0000000   2.7928460   2.7928460   2.7928460   0.0000000
+ AtZNuc=   6.0000000   6.0000000   6.0000000   7.0000000   7.0000000   6.0000000   1.0000000   1.0000000   1.0000000   6.0000000
+
+  Atom        31          32          33          34          35          36          37          38          39          40
+ IAtWgt=           1           1           1          12           1           1           1          12           1           1
+ AtmWgt=   1.0078250   1.0078250   1.0078250  12.0000000   1.0078250   1.0078250   1.0078250  12.0000000   1.0078250   1.0078250
+ NucSpn=           1           1           1           0           1           1           1           0           1           1
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    2.7928460   2.7928460   2.7928460   0.0000000   2.7928460   2.7928460   2.7928460   0.0000000   2.7928460   2.7928460
+ AtZNuc=   1.0000000   1.0000000   1.0000000   6.0000000   1.0000000   1.0000000   1.0000000   6.0000000   1.0000000   1.0000000
+
+  Atom        41          42          43          44          45          46          47          48          49          50
+ IAtWgt=           1          12          12          12          14          14          12           1           1           1
+ AtmWgt=   1.0078250  12.0000000  12.0000000  12.0000000  14.0030740  14.0030740  12.0000000   1.0078250   1.0078250   1.0078250
+ NucSpn=           1           0           0           0           2           2           0           1           1           1
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   0.0000000   2.0440000   2.0440000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    2.7928460   0.0000000   0.0000000   0.0000000   0.4037610   0.4037610   0.0000000   2.7928460   2.7928460   2.7928460
+ AtZNuc=   1.0000000   6.0000000   6.0000000   6.0000000   7.0000000   7.0000000   6.0000000   1.0000000   1.0000000   1.0000000
+
+  Atom        51          52          53          54          55          56          57          58          59          60
+ IAtWgt=          12           1           1           1          12           1           1           1          12           1
+ AtmWgt=  12.0000000   1.0078250   1.0078250   1.0078250  12.0000000   1.0078250   1.0078250   1.0078250  12.0000000   1.0078250
+ NucSpn=           0           1           1           1           0           1           1           1           0           1
+ AtZEff=  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000   0.0000000
+ NMagM=    0.0000000   2.7928460   2.7928460   2.7928460   0.0000000   2.7928460   2.7928460   2.7928460   0.0000000   2.7928460
+ AtZNuc=   6.0000000   1.0000000   1.0000000   1.0000000   6.0000000   1.0000000   1.0000000   1.0000000   6.0000000   1.0000000
+
+  Atom        61          62
+ IAtWgt=           1           1
+ AtmWgt=   1.0078250   1.0078250
+ NucSpn=           1           1
+ AtZEff=  -0.0000000  -0.0000000
+ NQMom=    0.0000000   0.0000000
+ NMagM=    2.7928460   2.7928460
+ AtZNuc=   1.0000000   1.0000000
+ Leave Link  101 at Tue Jan 26 04:09:18 2021, MaxMem=  4026531840 cpu:               0.8 elap:               0.1
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l202.exe)
+ Stoichiometry    C26H32N4(2+)
+ Framework group  C1[X(C26H32N4)]
+ Deg. of freedom   180
+ Full point group                 C1      NOp   1
+ Largest Abelian subgroup         C1      NOp   1
+ Largest concise Abelian subgroup C1      NOp   1
+                         Standard orientation:                         
+ ---------------------------------------------------------------------
+ Center     Atomic      Atomic             Coordinates (Angstroms)
+ Number     Number       Type             X           Y           Z
+ ---------------------------------------------------------------------
+      1          6           0        2.823961   -0.444264    1.111805
+      2          6           0        3.524911   -0.000100    0.000001
+      3          6           0        1.447297   -0.438089    1.110761
+      4          6           0        2.823968    0.444049   -1.111840
+      5          6           0        0.740218   -0.000107   -0.000031
+      6          6           0        1.447325    0.437860   -1.110830
+      7          1           0        0.914462   -0.797765    1.980986
+      8          1           0        3.355363    0.783593   -1.991035
+      9          1           0        0.914491    0.797490   -1.981076
+     10          6           0       -0.740229   -0.000109   -0.000016
+     11          6           0       -1.447379   -0.437502   -1.110991
+     12          6           0       -1.447259    0.437322    1.111037
+     13          6           0       -2.824033   -0.443666   -1.111944
+     14          6           0       -2.823909    0.443539    1.112143
+     15          6           0       -3.524910   -0.000034    0.000126
+     16          1           0       -0.914614   -0.796709   -1.981454
+     17          1           0       -0.914365    0.796519    1.981427
+     18          1           0       -3.355477   -0.782802   -1.991269
+     19          1           0       -3.355249    0.782652    1.991539
+     20          1           0        3.355316   -0.783824    1.991014
+     21          6           0       -4.975135   -0.000032    0.000145
+     22          6           0       -6.146520    0.565054    0.408043
+     23          6           0       -6.146453   -0.565050   -0.408017
+     24          7           0       -6.780980    1.491697    1.066857
+     25          7           0       -6.780843   -1.491604   -1.067037
+     26          6           0       -6.057956    2.591048    1.684578
+     27          1           0       -6.154708    2.545100    2.768364
+     28          1           0       -5.008879    2.544629    1.410837
+     29          1           0       -6.464629    3.537319    1.332266
+     30          6           0       -8.228734    1.518275    1.186143
+     31          1           0       -8.494477    1.775383    2.209103
+     32          1           0       -8.659441    2.259109    0.513350
+     33          1           0       -8.642938    0.539771    0.968827
+     34          6           0       -6.057730   -2.591089   -1.684422
+     35          1           0       -6.153192   -2.544651   -2.768303
+     36          1           0       -5.008941   -2.545387   -1.409434
+     37          1           0       -6.465326   -3.537274   -1.332961
+     38          6           0       -8.228631   -1.518112   -1.186291
+     39          1           0       -8.494234   -1.779605   -2.208151
+     40          1           0       -8.659838   -2.255827   -0.510389
+     41          1           0       -8.642467   -0.538433   -0.973542
+     42          6           0        4.975109   -0.000078    0.000026
+     43          6           0        6.146534   -0.565080    0.407916
+     44          6           0        6.146403    0.565147   -0.407945
+     45          7           0        6.781069   -1.491701    1.066705
+     46          7           0        6.780732    1.491927   -1.066700
+     47          6           0        6.058202   -2.591312    1.684129
+     48          1           0        6.154554   -2.545406    2.767953
+     49          1           0        5.009205   -2.545245    1.410016
+     50          1           0        6.465319   -3.537423    1.331906
+     51          6           0        8.228858   -1.518145    1.185797
+     52          1           0        8.494704   -1.776946    2.208295
+     53          1           0        8.659724   -2.257735    0.511728
+     54          1           0        8.642813   -0.539154    0.970202
+     55          6           0        6.057561    2.591370   -1.684106
+     56          1           0        6.153074    2.544964   -2.767982
+     57          1           0        5.008776    2.545628   -1.409122
+     58          1           0        6.465122    3.537559   -1.332610
+     59          6           0        8.228499    1.518584   -1.185941
+     60          1           0        8.494145    1.779106   -2.208049
+     61          1           0        8.659520    2.257040   -0.510729
+     62          1           0        8.642516    0.539209   -0.972160
+ ---------------------------------------------------------------------
+ Rotational constants (GHZ):           0.4108366           0.0399477           0.0392121
+ Leave Link  202 at Tue Jan 26 04:09:18 2021, MaxMem=  4026531840 cpu:               0.1 elap:               0.0
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l301.exe)
+ Standard basis: TZVP (5D, 7F)
+ Ernie: Thresh=  0.10000D-02 Tol=  0.10000D-05 Strict=F.
+ There are   792 symmetry adapted cartesian basis functions of A   symmetry.
+ There are   762 symmetry adapted basis functions of A   symmetry.
+   762 basis functions,  1306 primitive gaussians,   792 cartesian basis functions
+   107 alpha electrons      107 beta electrons
+       nuclear repulsion energy      2573.9438951873 Hartrees.
+ IExCor=33909 DFT=T Ex+Corr=LC-wHPBE ExCW=0 ScaHFX=  1.000000
+ ScaDFX=  1.000000  1.000000  1.000000  1.000000 ScalE2=  1.000000  1.000000
+ IRadAn=      5 IRanWt=     -1 IRanGd=            0 ICorTp=0 IEmpDi=  4
+ HFx  wShort=  0.000000 wLong=  0.328100 cFull=  0.000000 cShort=  0.000000 cLong=  1.000000
+ DFx  wShort=  0.000000 wLong=  0.328100 cFull=  0.000000 cShort=  1.000000 cLong=  0.000000
+ NAtoms=   62 NActive=   62 NUniq=   62 SFac= 1.00D+00 NAtFMM=   60 NAOKFM=T Big=T
+ Integral buffers will be    131072 words long.
+ Raffenetti 2 integral format.
+ Two-electron integral symmetry is turned on.
+ Leave Link  301 at Tue Jan 26 04:09:18 2021, MaxMem=  4026531840 cpu:               0.4 elap:               0.1
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l302.exe)
+ NPDir=0 NMtPBC=     1 NCelOv=     1 NCel=       1 NClECP=     1 NCelD=      1
+         NCelK=      1 NCelE2=     1 NClLst=     1 CellRange=     0.0.
+ One-electron integrals computed using PRISM.
+ One-electron integral symmetry used in STVInt
+ NBasis=   762 RedAO= T EigKep=  6.76D-06  NBF=   762
+ NBsUse=   762 1.00D-06 EigRej= -1.00D+00 NBFU=   762
+ Precomputing XC quadrature grid using
+ IXCGrd= 4 IRadAn=           5 IRanWt=          -1 IRanGd=           0 AccXCQ= 0.00D+00.
+ Generated NRdTot=       0 NPtTot=           0 NUsed=           0 NTot=          32
+ NSgBfM=   719   719   719   719   719 MxSgAt=    62 MxSgA2=    62.
+ Leave Link  302 at Tue Jan 26 04:09:20 2021, MaxMem=  4026531840 cpu:              16.5 elap:               2.1
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l303.exe)
+ DipDrv:  MaxL=1.
+ Leave Link  303 at Tue Jan 26 04:09:20 2021, MaxMem=  4026531840 cpu:               1.3 elap:               0.2
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l401.exe)
+ ExpMin= 9.52D-02 ExpMax= 1.97D+04 ExpMxC= 6.73D+02 IAcc=3 IRadAn=         5 AccDes= 0.00D+00
+ Harris functional with IExCor=33909 and IRadAn=       5 diagonalized for initial guess.
+ HarFok:  IExCor=33909 AccDes= 0.00D+00 IRadAn=         5 IDoV= 1 UseB2=F ITyADJ=14
+ ICtDFT=  3500011 ScaDFX=  1.000000  1.000000  1.000000  1.000000
+ FoFCou: FMM=F IPFlag=           0 FMFlag=      100000 FMFlg1=        2001
+         NFxFlg=           0 DoJE=T BraDBF=F KetDBF=T FulRan=T
+         wScrn=  0.000000 ICntrl=       500 IOpCl=  0 I1Cent=   200000004 NGrid=           0
+         NMat0=    1 NMatS0=      1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
+ Petite list used in FoFCou.
+ Harris En= -1192.30032414145    
+ JPrj=0 DoOrth=F DoCkMO=F.
+ Leave Link  401 at Tue Jan 26 04:09:30 2021, MaxMem=  4026531840 cpu:              81.5 elap:              10.2
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l502.exe)
+ Integral symmetry usage will be decided dynamically.
+ Closed shell SCF:
+ Using DIIS extrapolation, IDIIS=    10.
+ NGot=  4026531840 LenX=  4025262970 LenY=  4024634914
+ Requested convergence on RMS density matrix=1.00D-06 within  32 cycles.
+ Requested convergence on MAX density matrix=1.00D-04.
+ Requested convergence on             energy=1.00D-04.
+ Virtual orbitals will be shifted by   0.500 hartree.
+ No special actions if energy rises.
+ Dynamic level shift is on during FON iterations.
+
+ Cycle   1  Pass 1  IDiag  1:
+ FoFJK:  IHMeth= 1 ICntrl=       0 DoSepK=T KAlg= 0 I1Cent=           0 FoldK=F
+ IRaf=         1 NMat=       1 IRICut=       1 DoRegI=T DoRafI=F ISym2E= 0 IDoP0=0 IntGTp=1.
+ FoFCou: FMM=T IPFlag=           0 FMFlag=      100000 FMFlg1=        2001
+         NFxFlg=           0 DoJE=T BraDBF=F KetDBF=F FulRan=T
+         wScrn=  0.000000 ICntrl=       500 IOpCl=  0 I1Cent=           0 NGrid=           0
+         NMat0=    1 NMatS0=      1 NMatT0=    0 NMatD0=    1 NMtDS0=    0 NMtDT0=    0
+ Symmetry not used in FoFCou.
+ FMM levels:  10  Number of levels for PrismC:   9
+ E= -1227.53808988307    
+ DIIS: error= 2.55D-02 at cycle   1 NSaved=   1.
+ NSaved= 1 IEnMin= 1 EnMin= -1227.53808988307     IErMin= 1 ErrMin= 2.55D-02
+ ErrMax= 2.55D-02  0.00D+00 EMaxC= 1.00D+00 BMatC= 3.77D-01 BMatP= 3.77D-01
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com:  0.100D+01
+ Coeff:      0.100D+01
+ Gap=     0.372 Goal=   None    Shift=    0.500
+ T= 1398. Gap= 0.766 NK=0 IS=  108 IE=  762 IFin=  107
+          NO(<0.9)=   0  NV(>0.1)=   0    107.00e < EF      0.00e >EF  Err=0.0D+00
+ GapD=    0.372 DampG=1.000 DampE=0.500 DampFc=0.5000 IDamp=-1.
+ Damping current iteration by 5.00D-01
+ RMSDP=2.50D-03 MaxDP=1.25D-01              OVMax= 6.51D-02
+
+ Cycle   2  Pass 1  IDiag  1:
+ E= -1227.73948381119     Delta-E=       -0.201393928116 Rises=F Damp=T
+ DIIS: error= 1.11D-02 at cycle   2 NSaved=   2.
+ NSaved= 2 IEnMin= 2 EnMin= -1227.73948381119     IErMin= 2 ErrMin= 1.11D-02
+ ErrMax= 1.11D-02  0.00D+00 EMaxC= 1.00D+00 BMatC= 7.56D-02 BMatP= 3.77D-01
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com: -0.675D+00 0.168D+01
+ Coeff:     -0.675D+00 0.168D+01
+ Gap=     0.320 Goal=   None    Shift=    0.500
+ T= 1273. Gap= 0.799 NK=0 IS=  108 IE=  762 IFin=  107
+          NO(<0.9)=   0  NV(>0.1)=   0    107.00e < EF      0.00e >EF  Err=0.0D+00
+ GapD=    0.320 DampG=1.000 DampE=0.500 DampFc=0.5000 IDamp=-1.
+ Damping current iteration by 5.00D-01
+ RMSDP=1.48D-03 MaxDP=8.36D-02 DE=-2.01D-01 OVMax= 2.12D-02
+
+ Cycle   3  Pass 1  IDiag  1:
+ E= -1227.81488395501     Delta-E=       -0.075400143817 Rises=F Damp=T
+ DIIS: error= 5.49D-03 at cycle   3 NSaved=   3.
+ NSaved= 3 IEnMin= 3 EnMin= -1227.81488395501     IErMin= 3 ErrMin= 5.49D-03
+ ErrMax= 5.49D-03  0.00D+00 EMaxC= 1.00D+00 BMatC= 1.73D-02 BMatP= 7.56D-02
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com:  0.380D-01-0.987D+00 0.195D+01
+ Coeff:      0.380D-01-0.987D+00 0.195D+01
+ Gap=     0.303 Goal=   None    Shift=    0.500
+ T= 1040. Gap= 0.803 NK=0 IS=  108 IE=  762 IFin=  107
+          NO(<0.9)=   0  NV(>0.1)=   0    107.00e < EF      0.00e >EF  Err=0.0D+00
+ GapD=    0.303 DampG=1.000 DampE=1.000 DampFc=1.0000 IDamp=-1.
+ RMSDP=8.87D-04 MaxDP=4.82D-02 DE=-7.54D-02 OVMax= 1.64D-02
+
+ Cycle   4  Pass 1  IDiag  1:
+ E= -1227.88166279400     Delta-E=       -0.066778838996 Rises=F Damp=F
+ DIIS: error= 2.42D-03 at cycle   4 NSaved=   4.
+ NSaved= 4 IEnMin= 4 EnMin= -1227.88166279400     IErMin= 4 ErrMin= 2.42D-03
+ ErrMax= 2.42D-03  0.00D+00 EMaxC= 1.00D+00 BMatC= 4.50D-04 BMatP= 1.73D-02
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com:  0.734D-01-0.202D+00 0.115D+00 0.101D+01
+ Coeff:      0.734D-01-0.202D+00 0.115D+00 0.101D+01
+ Gap=     0.304 Goal=   None    Shift=    0.500
+ T=  564. Gap= 0.804 NK=0 IS=  108 IE=  762 IFin=  107
+          NO(<0.9)=   0  NV(>0.1)=   0    107.00e < EF      0.00e >EF  Err=0.0D+00
+ GapD=    0.304 DampG=1.000 DampE=1.000 DampFc=1.0000 IDamp=-1.
+ RMSDP=1.36D-04 MaxDP=5.47D-03 DE=-6.68D-02 OVMax= 1.21D-02
+
+ Cycle   5  Pass 1  IDiag  1:
+ E= -1227.88264705988     Delta-E=       -0.000984265881 Rises=F Damp=F
+ DIIS: error= 1.83D-03 at cycle   5 NSaved=   5.
+ NSaved= 5 IEnMin= 5 EnMin= -1227.88264705988     IErMin= 5 ErrMin= 1.83D-03
+ ErrMax= 1.83D-03  0.00D+00 EMaxC= 1.00D+00 BMatC= 1.25D-04 BMatP= 4.50D-04
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com: -0.413D-02 0.168D+00-0.346D+00-0.371D+00 0.155D+01
+ Coeff:     -0.413D-02 0.168D+00-0.346D+00-0.371D+00 0.155D+01
+ Gap=     0.306 Goal=   None    Shift=    0.500
+ T=  162. Gap= 0.806 NK=0 IS=  108 IE=  762 IFin=  107
+          NO(<0.9)=   0  NV(>0.1)=   0    107.00e < EF      0.00e >EF  Err=0.0D+00
+ GapD=    0.306 DampG=1.000 DampE=1.000 DampFc=1.0000 IDamp=-1.
+ RMSDP=8.73D-05 MaxDP=3.75D-03 DE=-9.84D-04 OVMax= 1.04D-02
+
+ Cycle   6  Pass 1  IDiag  1:
+ E= -1227.88312884322     Delta-E=       -0.000481783339 Rises=F Damp=F
+ DIIS: error= 1.31D-03 at cycle   6 NSaved=   6.
+ NSaved= 6 IEnMin= 6 EnMin= -1227.88312884322     IErMin= 6 ErrMin= 1.31D-03
+ ErrMax= 1.31D-03  0.00D+00 EMaxC= 1.00D+00 BMatC= 4.82D-05 BMatP= 1.25D-04
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com: -0.261D-01 0.773D-01-0.597D-01-0.298D+00-0.399D+00 0.171D+01
+ Coeff:     -0.261D-01 0.773D-01-0.597D-01-0.298D+00-0.399D+00 0.171D+01
+ Gap=     0.306 Goal=   None    Shift=    0.500
+ GapD=    0.306 DampG=1.000 DampE=1.000 DampFc=1.0000 IDamp=-1.
+ RMSDP=5.24D-05 MaxDP=1.88D-03 DE=-4.82D-04 OVMax= 7.96D-03
+
+ Cycle   7  Pass 1  IDiag  1:
+ E= -1227.88335406690     Delta-E=       -0.000225223675 Rises=F Damp=F
+ DIIS: error= 8.93D-04 at cycle   7 NSaved=   7.
+ NSaved= 7 IEnMin= 7 EnMin= -1227.88335406690     IErMin= 7 ErrMin= 8.93D-04
+ ErrMax= 8.93D-04  0.00D+00 EMaxC= 1.00D+00 BMatC= 1.99D-05 BMatP= 4.82D-05
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com: -0.501D-02-0.258D-01 0.760D-01 0.141D+00-0.717D+00-0.473D+00
+ Coeff-Com:  0.200D+01
+ Coeff:     -0.501D-02-0.258D-01 0.760D-01 0.141D+00-0.717D+00-0.473D+00
+ Coeff:      0.200D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=3.00D-05 MaxDP=1.14D-03 DE=-2.25D-04 OVMax= 5.95D-03
+
+ Cycle   8  Pass 1  IDiag  1:
+ E= -1227.88345803139     Delta-E=       -0.000103964493 Rises=F Damp=F
+ DIIS: error= 5.94D-04 at cycle   8 NSaved=   8.
+ NSaved= 8 IEnMin= 8 EnMin= -1227.88345803139     IErMin= 8 ErrMin= 5.94D-04
+ ErrMax= 5.94D-04  0.00D+00 EMaxC= 1.00D+00 BMatC= 8.44D-06 BMatP= 1.99D-05
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com:  0.343D-02-0.314D-02-0.523D-02 0.157D+00-0.125D+00-0.612D+00
+ Coeff-Com: -0.288D+00 0.187D+01
+ Coeff:      0.343D-02-0.314D-02-0.523D-02 0.157D+00-0.125D+00-0.612D+00
+ Coeff:     -0.288D+00 0.187D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=1.62D-05 MaxDP=6.07D-04 DE=-1.04D-04 OVMax= 4.09D-03
+
+ Cycle   9  Pass 1  IDiag  1:
+ E= -1227.88350214730     Delta-E=       -0.000044115912 Rises=F Damp=F
+ DIIS: error= 3.85D-04 at cycle   9 NSaved=   9.
+ NSaved= 9 IEnMin= 9 EnMin= -1227.88350214730     IErMin= 9 ErrMin= 3.85D-04
+ ErrMax= 3.85D-04  0.00D+00 EMaxC= 1.00D+00 BMatC= 3.52D-06 BMatP= 8.44D-06
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com:  0.154D-02 0.166D-01-0.406D-01 0.341D-01 0.172D+00-0.114D+00
+ Coeff-Com: -0.865D+00 0.961D-02 0.179D+01
+ Coeff:      0.154D-02 0.166D-01-0.406D-01 0.341D-01 0.172D+00-0.114D+00
+ Coeff:     -0.865D+00 0.961D-02 0.179D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=1.05D-05 MaxDP=7.08D-04 DE=-4.41D-05 OVMax= 2.75D-03
+
+ Cycle  10  Pass 1  IDiag  1:
+ E= -1227.88351998440     Delta-E=       -0.000017837096 Rises=F Damp=F
+ DIIS: error= 2.45D-04 at cycle  10 NSaved=  10.
+ NSaved=10 IEnMin=10 EnMin= -1227.88351998440     IErMin=10 ErrMin= 2.45D-04
+ ErrMax= 2.45D-04  0.00D+00 EMaxC= 1.00D+00 BMatC= 1.47D-06 BMatP= 3.52D-06
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com: -0.279D-02 0.109D-01-0.129D-01-0.352D-01 0.259D-01 0.212D+00
+ Coeff-Com:  0.375D-01-0.107D+01-0.157D+00 0.199D+01
+ Coeff:     -0.279D-02 0.109D-01-0.129D-01-0.352D-01 0.259D-01 0.212D+00
+ Coeff:      0.375D-01-0.107D+01-0.157D+00 0.199D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=5.61D-06 MaxDP=2.91D-04 DE=-1.78D-05 OVMax= 1.74D-03
+
+ Cycle  11  Pass 1  IDiag  1:
+ E= -1227.88352678119     Delta-E=       -0.000006796786 Rises=F Damp=F
+ DIIS: error= 1.52D-04 at cycle  11 NSaved=  11.
+ NSaved=11 IEnMin=11 EnMin= -1227.88352678119     IErMin=11 ErrMin= 1.52D-04
+ ErrMax= 1.52D-04  0.00D+00 EMaxC= 1.00D+00 BMatC= 6.37D-07 BMatP= 1.47D-06
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com: -0.189D-02 0.308D-02 0.332D-03-0.130D-01-0.425D-01 0.120D+00
+ Coeff-Com:  0.241D+00-0.566D+00-0.357D+00-0.195D+00 0.181D+01
+ Coeff:     -0.189D-02 0.308D-02 0.332D-03-0.130D-01-0.425D-01 0.120D+00
+ Coeff:      0.241D+00-0.566D+00-0.357D+00-0.195D+00 0.181D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=3.24D-06 MaxDP=1.92D-04 DE=-6.80D-06 OVMax= 1.08D-03
+
+ Cycle  12  Pass 1  IDiag  1:
+ E= -1227.88352933780     Delta-E=       -0.000002556618 Rises=F Damp=F
+ DIIS: error= 9.44D-05 at cycle  12 NSaved=  12.
+ NSaved=12 IEnMin=12 EnMin= -1227.88352933780     IErMin=12 ErrMin= 9.44D-05
+ ErrMax= 9.44D-05  0.00D+00 EMaxC= 1.00D+00 BMatC= 2.53D-07 BMatP= 6.37D-07
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com:  0.100D-03-0.487D-03 0.728D-03 0.145D-01-0.262D-01-0.456D-01
+ Coeff-Com:  0.656D-01 0.175D+00 0.557D-01-0.114D+01-0.866D-01 0.199D+01
+ Coeff:      0.100D-03-0.487D-03 0.728D-03 0.145D-01-0.262D-01-0.456D-01
+ Coeff:      0.656D-01 0.175D+00 0.557D-01-0.114D+01-0.866D-01 0.199D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=1.86D-06 MaxDP=1.19D-04 DE=-2.56D-06 OVMax= 6.61D-04
+
+ Cycle  13  Pass 1  IDiag  1:
+ E= -1227.88353027543     Delta-E=       -0.000000937629 Rises=F Damp=F
+ DIIS: error= 5.78D-05 at cycle  13 NSaved=  13.
+ NSaved=13 IEnMin=13 EnMin= -1227.88353027543     IErMin=13 ErrMin= 5.78D-05
+ ErrMax= 5.78D-05  0.00D+00 EMaxC= 1.00D+00 BMatC= 9.89D-08 BMatP= 2.53D-07
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com:  0.306D-03 0.165D-03-0.140D-02 0.653D-02 0.717D-02-0.423D-01
+ Coeff-Com: -0.399D-01 0.180D+00 0.115D+00-0.326D+00-0.615D+00-0.245D+00
+ Coeff-Com:  0.196D+01
+ Coeff:      0.306D-03 0.165D-03-0.140D-02 0.653D-02 0.717D-02-0.423D-01
+ Coeff:     -0.399D-01 0.180D+00 0.115D+00-0.326D+00-0.615D+00-0.245D+00
+ Coeff:      0.196D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=1.11D-06 MaxDP=5.40D-05 DE=-9.38D-07 OVMax= 4.00D-04
+
+ Cycle  14  Pass 1  IDiag  1:
+ E= -1227.88353061709     Delta-E=       -0.000000341657 Rises=F Damp=F
+ DIIS: error= 3.50D-05 at cycle  14 NSaved=  14.
+ NSaved=14 IEnMin=14 EnMin= -1227.88353061709     IErMin=14 ErrMin= 3.50D-05
+ ErrMax= 3.50D-05  0.00D+00 EMaxC= 1.00D+00 BMatC= 3.56D-08 BMatP= 9.89D-08
+ IDIUse=1 WtCom= 1.00D+00 WtEn= 0.00D+00
+ Coeff-Com: -0.101D-03 0.498D-03-0.708D-03-0.273D-02 0.571D-02 0.824D-02
+ Coeff-Com: -0.678D-02-0.447D-01-0.918D-02 0.189D+00-0.110D-02-0.463D+00
+ Coeff-Com: -0.105D+01 0.238D+01
+ Coeff:     -0.101D-03 0.498D-03-0.708D-03-0.273D-02 0.571D-02 0.824D-02
+ Coeff:     -0.678D-02-0.447D-01-0.918D-02 0.189D+00-0.110D-02-0.463D+00
+ Coeff:     -0.105D+01 0.238D+01
+ Gap=     0.307 Goal=   None    Shift=    0.500
+ RMSDP=6.73D-07 MaxDP=2.77D-05 DE=-3.42D-07 OVMax= 2.36D-04
+
+ SCF Done:  E(RLC-wHPBE) =  -1227.88353062     A.U. after   14 cycles
+            NFock= 14  Conv=0.67D-06     -V/T= 2.0046
+ KE= 1.222224466446D+03 PE=-7.955252916104D+03 EE= 2.931201023853D+03
+ Leave Link  502 at Tue Jan 26 04:24:14 2021, MaxMem=  4026531840 cpu:            6973.5 elap:             884.0
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l508.exe)
+ QCSCF skips out because SCF is already converged.
+ Leave Link  508 at Tue Jan 26 04:24:14 2021, MaxMem=  4026531840 cpu:               0.1 elap:               0.0
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l601.exe)
+ Copying SCF densities to generalized density rwf, IOpCl= 0 IROHF=0.
+
+ **********************************************************************
+
+            Population analysis using the SCF density.
+
+ **********************************************************************
+
+ Orbital symmetries:
+       Occupied  (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+       Virtual   (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A) (A)
+                 (A) (A) (A) (A) (A) (A) (A)
+ The electronic state is 1-A.
+ Alpha  occ. eigenvalues --  -14.41738 -14.41738 -14.41737 -14.41737 -10.35317
+ Alpha  occ. eigenvalues --  -10.35317 -10.35276 -10.35276 -10.31198 -10.31198
+ Alpha  occ. eigenvalues --  -10.28166 -10.28166 -10.28165 -10.28165 -10.28080
+ Alpha  occ. eigenvalues --  -10.28080 -10.28080 -10.28080 -10.27958 -10.27958
+ Alpha  occ. eigenvalues --  -10.26559 -10.26545 -10.25851 -10.25850 -10.25849
+ Alpha  occ. eigenvalues --  -10.25849 -10.25105 -10.25104 -10.25103 -10.25102
+ Alpha  occ. eigenvalues --   -1.30894  -1.30894  -1.27738  -1.27738  -1.22482
+ Alpha  occ. eigenvalues --   -1.22475  -1.17965  -1.16193  -1.09766  -1.05439
+ Alpha  occ. eigenvalues --   -1.05063  -1.04744  -1.03795  -1.03572  -1.03360
+ Alpha  occ. eigenvalues --   -1.03345  -1.02023  -1.02021  -1.00879  -1.00625
+ Alpha  occ. eigenvalues --   -0.95869  -0.92335  -0.90344  -0.89737  -0.85764
+ Alpha  occ. eigenvalues --   -0.85387  -0.85005  -0.84881  -0.84471  -0.84183
+ Alpha  occ. eigenvalues --   -0.81147  -0.80303  -0.80222  -0.79667  -0.78832
+ Alpha  occ. eigenvalues --   -0.78524  -0.78154  -0.77499  -0.77492  -0.76866
+ Alpha  occ. eigenvalues --   -0.74744  -0.73329  -0.73031  -0.71984  -0.71914
+ Alpha  occ. eigenvalues --   -0.71495  -0.71152  -0.71090  -0.70980  -0.70874
+ Alpha  occ. eigenvalues --   -0.70663  -0.69668  -0.69452  -0.69428  -0.69272
+ Alpha  occ. eigenvalues --   -0.69269  -0.68735  -0.68252  -0.68218  -0.68203
+ Alpha  occ. eigenvalues --   -0.67604  -0.66875  -0.66840  -0.65924  -0.65679
+ Alpha  occ. eigenvalues --   -0.64037  -0.63358  -0.62113  -0.61657  -0.58941
+ Alpha  occ. eigenvalues --   -0.58932  -0.57510  -0.54060  -0.53850  -0.53746
+ Alpha  occ. eigenvalues --   -0.50288  -0.48371
+ Alpha virt. eigenvalues --   -0.17672  -0.13986  -0.11819  -0.11775  -0.07713
+ Alpha virt. eigenvalues --   -0.07712  -0.07360  -0.07151  -0.07148  -0.05295
+ Alpha virt. eigenvalues --   -0.04102  -0.04027  -0.03062  -0.02578  -0.02016
+ Alpha virt. eigenvalues --   -0.01761  -0.01659  -0.01139  -0.00568  -0.00187
+ Alpha virt. eigenvalues --    0.00141   0.00151   0.00338   0.00779   0.01156
+ Alpha virt. eigenvalues --    0.01217   0.01471   0.01512   0.01618   0.02313
+ Alpha virt. eigenvalues --    0.02430   0.02650   0.02831   0.02921   0.03036
+ Alpha virt. eigenvalues --    0.03059   0.03244   0.03617   0.04278   0.04429
+ Alpha virt. eigenvalues --    0.04722   0.04798   0.05019   0.05372   0.05773
+ Alpha virt. eigenvalues --    0.05863   0.06619   0.06713   0.07323   0.07778
+ Alpha virt. eigenvalues --    0.07986   0.08135   0.08214   0.08396   0.10048
+ Alpha virt. eigenvalues --    0.10108   0.10509   0.10810   0.10900   0.11159
+ Alpha virt. eigenvalues --    0.11170   0.11411   0.11657   0.12074   0.12544
+ Alpha virt. eigenvalues --    0.12764   0.13006   0.13211   0.14204   0.14842
+ Alpha virt. eigenvalues --    0.15259   0.15411   0.16007   0.16368   0.16519
+ Alpha virt. eigenvalues --    0.16534   0.17295   0.17542   0.17557   0.18811
+ Alpha virt. eigenvalues --    0.18896   0.19221   0.19387   0.19559   0.20742
+ Alpha virt. eigenvalues --    0.20950   0.21006   0.21278   0.21429   0.21657
+ Alpha virt. eigenvalues --    0.21899   0.22006   0.22201   0.22886   0.23101
+ Alpha virt. eigenvalues --    0.23214   0.23443   0.23708   0.24385   0.24693
+ Alpha virt. eigenvalues --    0.24976   0.25394   0.25433   0.25916   0.26928
+ Alpha virt. eigenvalues --    0.27104   0.27686   0.27856   0.27874   0.28453
+ Alpha virt. eigenvalues --    0.28656   0.28683   0.29689   0.29725   0.29806
+ Alpha virt. eigenvalues --    0.30249   0.31063   0.31234   0.31425   0.32174
+ Alpha virt. eigenvalues --    0.32301   0.32935   0.33753   0.34181   0.34495
+ Alpha virt. eigenvalues --    0.34640   0.34856   0.35055   0.35121   0.35352
+ Alpha virt. eigenvalues --    0.35476   0.35565   0.35837   0.36362   0.36763
+ Alpha virt. eigenvalues --    0.36874   0.36995   0.37237   0.37411   0.37736
+ Alpha virt. eigenvalues --    0.37893   0.38098   0.38636   0.38990   0.38993
+ Alpha virt. eigenvalues --    0.39148   0.39168   0.39836   0.40115   0.40152
+ Alpha virt. eigenvalues --    0.40453   0.41003   0.41231   0.41267   0.41367
+ Alpha virt. eigenvalues --    0.41846   0.42081   0.43137   0.43288   0.43343
+ Alpha virt. eigenvalues --    0.43973   0.44121   0.44741   0.44794   0.45013
+ Alpha virt. eigenvalues --    0.45068   0.45256   0.45623   0.46340   0.46542
+ Alpha virt. eigenvalues --    0.47233   0.47715   0.48017   0.48563   0.49439
+ Alpha virt. eigenvalues --    0.49816   0.50191   0.50376   0.51336   0.51657
+ Alpha virt. eigenvalues --    0.51771   0.52445   0.52605   0.53251   0.54449
+ Alpha virt. eigenvalues --    0.54486   0.55554   0.55607   0.55871   0.56258
+ Alpha virt. eigenvalues --    0.56435   0.57275   0.57466   0.57533   0.57932
+ Alpha virt. eigenvalues --    0.57997   0.59707   0.60712   0.61165   0.61701
+ Alpha virt. eigenvalues --    0.62290   0.62679   0.62803   0.64518   0.64553
+ Alpha virt. eigenvalues --    0.65220   0.65457   0.66318   0.66460   0.66680
+ Alpha virt. eigenvalues --    0.67346   0.67572   0.69247   0.70380   0.70892
+ Alpha virt. eigenvalues --    0.72615   0.72921   0.75051   0.75805   0.76009
+ Alpha virt. eigenvalues --    0.76016   0.76809   0.80058   0.81114   0.81249
+ Alpha virt. eigenvalues --    0.81414   0.91068   1.04912   1.05064   1.05102
+ Alpha virt. eigenvalues --    1.05147   1.08300   1.11817   1.12323   1.13930
+ Alpha virt. eigenvalues --    1.13960   1.14409   1.14489   1.14636   1.15384
+ Alpha virt. eigenvalues --    1.15517   1.15934   1.16079   1.16916   1.17351
+ Alpha virt. eigenvalues --    1.17905   1.18387   1.18506   1.18524   1.19026
+ Alpha virt. eigenvalues --    1.19677   1.19831   1.21238   1.21325   1.21967
+ Alpha virt. eigenvalues --    1.21973   1.22048   1.23499   1.23682   1.23720
+ Alpha virt. eigenvalues --    1.24370   1.24945   1.25155   1.25248   1.25303
+ Alpha virt. eigenvalues --    1.25743   1.26145   1.26316   1.26332   1.26486
+ Alpha virt. eigenvalues --    1.27160   1.27223   1.27707   1.28428   1.28508
+ Alpha virt. eigenvalues --    1.28667   1.28782   1.29069   1.29512   1.30184
+ Alpha virt. eigenvalues --    1.30706   1.30730   1.30928   1.33215   1.33785
+ Alpha virt. eigenvalues --    1.33812   1.34077   1.35260   1.35480   1.36138
+ Alpha virt. eigenvalues --    1.36634   1.36711   1.36801   1.37316   1.37378
+ Alpha virt. eigenvalues --    1.37410   1.37850   1.37924   1.38358   1.38704
+ Alpha virt. eigenvalues --    1.39036   1.39142   1.39640   1.39822   1.40056
+ Alpha virt. eigenvalues --    1.40583   1.41127   1.41196   1.41459   1.41856
+ Alpha virt. eigenvalues --    1.42860   1.43931   1.44336   1.44407   1.44979
+ Alpha virt. eigenvalues --    1.45050   1.45101   1.45594   1.45806   1.46060
+ Alpha virt. eigenvalues --    1.46074   1.46365   1.46725   1.46807   1.47000
+ Alpha virt. eigenvalues --    1.47808   1.47908   1.48111   1.48614   1.49081
+ Alpha virt. eigenvalues --    1.49123   1.49206   1.49320   1.49986   1.50827
+ Alpha virt. eigenvalues --    1.53084   1.53350   1.54298   1.54494   1.54581
+ Alpha virt. eigenvalues --    1.54891   1.55072   1.56294   1.56430   1.56508
+ Alpha virt. eigenvalues --    1.56571   1.57027   1.57155   1.57718   1.58055
+ Alpha virt. eigenvalues --    1.59296   1.59386   1.59733   1.60576   1.60606
+ Alpha virt. eigenvalues --    1.62142   1.62330   1.63381   1.63439   1.63466
+ Alpha virt. eigenvalues --    1.64781   1.65670   1.66319   1.66721   1.66744
+ Alpha virt. eigenvalues --    1.67526   1.68822   1.69037   1.69106   1.69246
+ Alpha virt. eigenvalues --    1.69451   1.69508   1.69868   1.70021   1.70060
+ Alpha virt. eigenvalues --    1.70299   1.70490   1.70768   1.70861   1.71108
+ Alpha virt. eigenvalues --    1.71590   1.71632   1.71710   1.71972   1.72108
+ Alpha virt. eigenvalues --    1.73086   1.73160   1.73636   1.73674   1.73721
+ Alpha virt. eigenvalues --    1.74519   1.76065   1.76103   1.77914   1.77929
+ Alpha virt. eigenvalues --    1.78125   1.78512   1.79558   1.80371   1.80511
+ Alpha virt. eigenvalues --    1.80560   1.81138   1.81408   1.81420   1.82822
+ Alpha virt. eigenvalues --    1.83577   1.84771   1.84974   1.85525   1.85902
+ Alpha virt. eigenvalues --    1.87236   1.87584   1.89457   1.90410   1.90821
+ Alpha virt. eigenvalues --    1.92889   1.93303   1.94160   1.94315   1.94786
+ Alpha virt. eigenvalues --    1.94797   1.95555   1.97307   1.97324   1.97810
+ Alpha virt. eigenvalues --    1.97885   1.98761   2.01722   2.02078   2.02418
+ Alpha virt. eigenvalues --    2.02612   2.03258   2.03303   2.05654   2.06703
+ Alpha virt. eigenvalues --    2.06918   2.07058   2.08012   2.08069   2.08953
+ Alpha virt. eigenvalues --    2.09454   2.10556   2.11463   2.11976   2.12781
+ Alpha virt. eigenvalues --    2.13849   2.14326   2.19055   2.19477   2.19869
+ Alpha virt. eigenvalues --    2.20053   2.20520   2.20818   2.20905   2.21553
+ Alpha virt. eigenvalues --    2.21681   2.21925   2.22160   2.22293   2.22394
+ Alpha virt. eigenvalues --    2.23615   2.23763   2.24649   2.24867   2.24914
+ Alpha virt. eigenvalues --    2.25299   2.25420   2.25510   2.26130   2.26464
+ Alpha virt. eigenvalues --    2.27501   2.27538   2.27943   2.28056   2.28772
+ Alpha virt. eigenvalues --    2.28783   2.28817   2.29252   2.29584   2.29677
+ Alpha virt. eigenvalues --    2.30254   2.30744   2.35740   2.36081   2.36152
+ Alpha virt. eigenvalues --    2.36291   2.38161   2.38860   2.39146   2.39175
+ Alpha virt. eigenvalues --    2.39406   2.42913   2.43377   2.43694   2.44233
+ Alpha virt. eigenvalues --    2.44259   2.45012   2.45061   2.45138   2.45706
+ Alpha virt. eigenvalues --    2.46459   2.46569   2.47066   2.47698   2.47834
+ Alpha virt. eigenvalues --    2.48784   2.49801   2.49819   2.49972   2.50088
+ Alpha virt. eigenvalues --    2.50595   2.50876   2.51080   2.52383   2.52721
+ Alpha virt. eigenvalues --    2.54755   2.54765   2.56003   2.56096   2.56768
+ Alpha virt. eigenvalues --    2.56969   2.57422   2.57975   2.58130   2.59049
+ Alpha virt. eigenvalues --    2.59343   2.59757   2.61639   2.62103   2.62514
+ Alpha virt. eigenvalues --    2.62875   2.63156   2.65163   2.65453   2.65880
+ Alpha virt. eigenvalues --    2.66133   2.66278   2.67095   2.67448   2.68256
+ Alpha virt. eigenvalues --    2.68343   2.69298   2.69448   2.70830   2.71483
+ Alpha virt. eigenvalues --    2.71593   2.73889   2.74580   2.75430   2.77727
+ Alpha virt. eigenvalues --    2.77799   2.77800   2.79227   2.79311   2.80367
+ Alpha virt. eigenvalues --    2.80518   2.87010   2.87161   2.92079   2.92359
+ Alpha virt. eigenvalues --    2.93141   2.93624   2.95491   2.96079   2.98724
+ Alpha virt. eigenvalues --    2.99287   3.00488   3.00687   3.01402   3.02168
+ Alpha virt. eigenvalues --    3.02224   3.03838   3.03990   3.04043   3.05057
+ Alpha virt. eigenvalues --    3.05222   3.07437   3.07892   3.08449   3.09376
+ Alpha virt. eigenvalues --    3.13507   3.14580   3.14730   3.15007   3.17308
+ Alpha virt. eigenvalues --    3.19145   3.20518   3.21117   3.21252   3.21773
+ Alpha virt. eigenvalues --    3.21811   3.21833   3.22572   3.22575   3.23049
+ Alpha virt. eigenvalues --    3.24225   3.24254   3.24836   3.26973   3.27089
+ Alpha virt. eigenvalues --    3.27454   3.27854   3.29307   3.30425   3.30742
+ Alpha virt. eigenvalues --    3.31286   3.33455   3.35276   3.35521   3.35733
+ Alpha virt. eigenvalues --    3.35975   3.37055   3.37609   3.49770   3.51517
+ Alpha virt. eigenvalues --    3.56880   3.61900   3.63337   3.64024   3.73071
+ Alpha virt. eigenvalues --    3.73147   3.73510   3.78668   3.89447   3.89565
+ Alpha virt. eigenvalues --   21.12477  21.23987  21.41928  21.42212  21.48807
+ Alpha virt. eigenvalues --   21.60589  21.60949  21.63899  21.69959  21.70376
+ Alpha virt. eigenvalues --   21.70540  21.76000  21.80038  21.86862  21.86913
+ Alpha virt. eigenvalues --   21.87641  21.90500  21.90815  21.91080  21.92445
+ Alpha virt. eigenvalues --   22.01411  22.03820  22.09690  22.10876  22.12613
+ Alpha virt. eigenvalues --   22.12865  31.56588  31.56890  31.71004  31.71269
+          Condensed to atoms (all electrons):
+ Mulliken charges:
+               1
+     1  C   -0.105563
+     2  C    0.140663
+     3  C   -0.163343
+     4  C   -0.105576
+     5  C    0.001833
+     6  C   -0.163311
+     7  H    0.179957
+     8  H    0.176461
+     9  H    0.179943
+    10  C    0.001854
+    11  C   -0.163305
+    12  C   -0.163347
+    13  C   -0.105589
+    14  C   -0.105559
+    15  C    0.140666
+    16  H    0.179941
+    17  H    0.179957
+    18  H    0.176463
+    19  H    0.176440
+    20  H    0.176438
+    21  C   -0.440933
+    22  C    0.070303
+    23  C    0.070256
+    24  N   -0.006806
+    25  N   -0.006775
+    26  C   -0.253015
+    27  H    0.179220
+    28  H    0.149755
+    29  H    0.173397
+    30  C   -0.253916
+    31  H    0.172985
+    32  H    0.186373
+    33  H    0.143542
+    34  C   -0.253355
+    35  H    0.179302
+    36  H    0.149808
+    37  H    0.173488
+    38  C   -0.254502
+    39  H    0.173073
+    40  H    0.186499
+    41  H    0.143787
+    42  C   -0.440954
+    43  C    0.070327
+    44  C    0.070287
+    45  N   -0.006774
+    46  N   -0.006775
+    47  C   -0.253116
+    48  H    0.179251
+    49  H    0.149760
+    50  H    0.173425
+    51  C   -0.254140
+    52  H    0.173017
+    53  H    0.186418
+    54  H    0.143632
+    55  C   -0.253303
+    56  H    0.179296
+    57  H    0.149802
+    58  H    0.173467
+    59  C   -0.254382
+    60  H    0.173057
+    61  H    0.186472
+    62  H    0.143724
+ Sum of Mulliken charges =   2.00000
+ Mulliken charges with hydrogens summed into heavy atoms:
+               1
+     1  C    0.070875
+     2  C    0.140663
+     3  C    0.016613
+     4  C    0.070885
+     5  C    0.001833
+     6  C    0.016632
+    10  C    0.001854
+    11  C    0.016636
+    12  C    0.016610
+    13  C    0.070874
+    14  C    0.070880
+    15  C    0.140666
+    21  C   -0.440933
+    22  C    0.070303
+    23  C    0.070256
+    24  N   -0.006806
+    25  N   -0.006775
+    26  C    0.249358
+    30  C    0.248984
+    34  C    0.249243
+    38  C    0.248857
+    42  C   -0.440954
+    43  C    0.070327
+    44  C    0.070287
+    45  N   -0.006774
+    46  N   -0.006775
+    47  C    0.249320
+    51  C    0.248927
+    55  C    0.249263
+    59  C    0.248871
+ Electronic spatial extent (au):  <R**2>=          26736.4450
+ Charge=              2.0000 electrons
+ Dipole moment (field-independent basis, Debye):
+    X=             -0.0002    Y=              0.0001    Z=             -0.0004  Tot=              0.0005
+ Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=            266.7807   YY=           -135.3986   ZZ=           -143.1314
+   XY=              0.0040   XZ=              0.0007   YZ=             -0.0015
+ Traceless Quadrupole moment (field-independent basis, Debye-Ang):
+   XX=            270.6971   YY=           -131.4822   ZZ=           -139.2150
+   XY=              0.0040   XZ=              0.0007   YZ=             -0.0015
+ Octapole moment (field-independent basis, Debye-Ang**2):
+  XXX=             -0.0073  YYY=              0.0099  ZZZ=              0.0050  XYY=              0.0363
+  XXY=              0.0031  XXZ=             -0.0270  XZZ=             -0.0391  YZZ=             -0.0033
+  YYZ=             -0.0159  XYZ=           -192.1566
+ Hexadecapole moment (field-independent basis, Debye-Ang**3):
+ XXXX=          -6117.1008 YYYY=          -1871.7719 ZZZZ=          -1387.8117 XXXY=              0.1105
+ XXXZ=              0.2398 YYYX=              0.0045 YYYZ=             -0.0146 ZZZX=             -0.0274
+ ZZZY=              0.0123 XXYY=          -3741.8518 XXZZ=          -4485.4819 YYZZ=           -501.0040
+ XXYZ=              0.0669 YYXZ=              0.0348 ZZXY=              0.0841
+ N-N= 2.573943895187D+03 E-N=-7.955252037207D+03  KE= 1.222224466446D+03
+ No NMR shielding tensors so no spin-rotation constants.
+ Leave Link  601 at Tue Jan 26 04:24:15 2021, MaxMem=  4026531840 cpu:               5.3 elap:               0.7
+ (Enter /opt/ohpc/pub/libs/gaussian/g16-A.03/sandybridge/g16/l9999.exe)
+
+ Test job not archived.
+ 1\1\GINC-CNODE145\SP\RLC-wHPBE\TZVP\C26H32N4(2+)\RDU230\26-Jan-2021\0\
+ \#P LC-wHPBE/TZVP iop(3/107=0328100000, 3/108=0328100000) scf=(conver=
+ 6,fermi,ndamp=35,noincfock,novaracc,vshift=500,xqc)\\H32 C26 N4\\2,1\C
+ ,0,-2.823961,0.444264,1.111805\C,0,-3.524911,0.0001,0.000001\C,0,-1.44
+ 7297,0.438089,1.110761\C,0,-2.823968,-0.444049,-1.11184\C,0,-0.740218,
+ 0.000107,-0.000031\C,0,-1.447325,-0.43786,-1.11083\H,0,-0.914462,0.797
+ 765,1.980986\H,0,-3.355363,-0.783593,-1.991035\H,0,-0.914491,-0.79749,
+ -1.981076\C,0,0.740229,0.000109,-0.000016\C,0,1.447379,0.437502,-1.110
+ 991\C,0,1.447259,-0.437322,1.111037\C,0,2.824033,0.443666,-1.111944\C,
+ 0,2.823909,-0.443539,1.112143\C,0,3.52491,0.000034,0.000126\H,0,0.9146
+ 14,0.796709,-1.981454\H,0,0.914365,-0.796519,1.981427\H,0,3.355477,0.7
+ 82802,-1.991269\H,0,3.355249,-0.782652,1.991539\H,0,-3.355316,0.783824
+ ,1.991014\C,0,4.975135,0.000032,0.000145\C,0,6.14652,-0.565054,0.40804
+ 3\C,0,6.146453,0.56505,-0.408017\N,0,6.78098,-1.491697,1.066857\N,0,6.
+ 780843,1.491604,-1.067037\C,0,6.057956,-2.591048,1.684578\H,0,6.154708
+ ,-2.5451,2.768364\H,0,5.008879,-2.544629,1.410837\H,0,6.464629,-3.5373
+ 19,1.332266\C,0,8.228734,-1.518275,1.186143\H,0,8.494477,-1.775383,2.2
+ 09103\H,0,8.659441,-2.259109,0.51335\H,0,8.642938,-0.539771,0.968827\C
+ ,0,6.05773,2.591089,-1.684422\H,0,6.153192,2.544651,-2.768303\H,0,5.00
+ 8941,2.545387,-1.409434\H,0,6.465326,3.537274,-1.332961\C,0,8.228631,1
+ .518112,-1.186291\H,0,8.494234,1.779605,-2.208151\H,0,8.659838,2.25582
+ 7,-0.510389\H,0,8.642467,0.538433,-0.973542\C,0,-4.975109,0.000078,0.0
+ 00026\C,0,-6.146534,0.56508,0.407916\C,0,-6.146403,-0.565147,-0.407945
+ \N,0,-6.781069,1.491701,1.066705\N,0,-6.780732,-1.491927,-1.0667\C,0,-
+ 6.058202,2.591312,1.684129\H,0,-6.154554,2.545406,2.767953\H,0,-5.0092
+ 05,2.545245,1.410016\H,0,-6.465319,3.537423,1.331906\C,0,-8.228858,1.5
+ 18145,1.185797\H,0,-8.494704,1.776946,2.208295\H,0,-8.659724,2.257735,
+ 0.511728\H,0,-8.642813,0.539154,0.970202\C,0,-6.057561,-2.59137,-1.684
+ 106\H,0,-6.153074,-2.544964,-2.767982\H,0,-5.008776,-2.545628,-1.40912
+ 2\H,0,-6.465122,-3.537559,-1.33261\C,0,-8.228499,-1.518584,-1.185941\H
+ ,0,-8.494145,-1.779106,-2.208049\H,0,-8.65952,-2.25704,-0.510729\H,0,-
+ 8.642516,-0.539209,-0.97216\\Version=EM64L-G16RevA.03\State=1-A\HF=-12
+ 27.8835306\RMSD=6.725e-07\Dipole=0.000083,-0.0000465,-0.0001624\Quadru
+ pole=201.2566828,-97.753768,-103.5029149,0.002946,-0.0004994,0.001134\
+ PG=C01 [X(C26H32N4)]\\@
+
+
+ A ROPE OVER THE TOP OF A FENCE HAS THE SAME LENGTH ON EACH SIDE.
+ WEIGHS 1/3 POUND PER FOOT.  ON ONE END HANGS A MONKEY HOLDING A
+ BANANA, AND ON THE OTHER END A WEIGHT EQUAL TO THE WEIGHT
+ OF THE MONKEY.  THE BANANA WEIGHS TWO OUNCES PER INCH.
+ THE ROPE IS AS LONG AS THE AGE OF THE MONKEY, 
+ AND THE WEIGHT OF THE MONKEY (IN OUNCES) IS AS MUCH
+ AS THE AGE OF THE MONKEY'S MOTHER.  THE COMBINED AGES OF MONKEY
+ AND MOTHER ARE THIRTY YEARS.  HALF THE WEIGHT OF THE MONKEY,
+  PLUS THE WEIGHT OF THE BANANA, IS ONE FOURTH AS MUCH AS THE WEIGHT
+ OF THE WEIGHT AND THE ROPE.
+ THE MONKEY'S MOTHER IS HALF AS OLD AS THE MONKEY WILL BE
+ WHEN IT IS 3 TIMES AS OLD AS ITS MOTHER WAS WHEN
+ SHE WAS HALF AS OLD AS THE MONKEY WILL BE WHEN IT IS
+ AS OLD AS ITS MOTHER WILL BE WHEN SHE IS 4 TIMES AS
+ OLD AS THE MONKEY WAS WHEN IT WAS TWICE AS OLD AS 
+ ITS MOTHER WAS WHEN SHE WAS ONE THIRD AS OLD AS THE
+ MONKEY WAS WHEN IT WAS AS OLD AS ITS MOTHER WAS WHEN 
+ SHE WAS 3 TIMES AS OLD AS THE MONKEY WAS WHEN IT WAS AS OLD AS ITS
+ MOTHER WAS WHEN SHE WAS 3 TIMES AS OLD AS THE MONKEY 
+ WAS WHEN IT WAS ONE FOURTH WAS OLD AS IT IS NOW.
+
+ HOW LONG IS THE BANANA?
+ Job cpu time:       0 days  1 hours 58 minutes  2.2 seconds.
+ Elapsed time:       0 days  0 hours 14 minutes 57.9 seconds.
+ File lengths (MBytes):  RWF=    228 Int=      0 D2E=      0 Chk=     40 Scr=      8
+ Normal termination of Gaussian 16 at Tue Jan 26 04:24:15 2021.

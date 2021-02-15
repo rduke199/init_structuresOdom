@@ -1,0 +1,21 @@
+Job 12438 running on SLURM NODELIST: cascadeb037 
+Job started at : Sun Jan 17 17:30:46 EST 2021
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning
+/mnt/gpfs2_4m/scratch/rdu230/ondemand/projects/init_structures/wtuning/mol_ta_cp_whol
+ 
+ Func-count     x          f(x)          Procedure
+    1       0.221885      1.55747        initial
+    2       0.328115      2.20307        golden
+    3       0.156231     0.819649        golden
+    4       0.115654     0.323443        golden
+    5      0.0905765    0.0211335        golden
+    6      0.0750776     0.167477        golden
+    7      0.0917383    0.0342216        parabolic
+    8      0.0866255    0.0276228        parabolic
+    9      0.0890673   0.00297121        golden
+   10       0.088734   0.00188493        parabolic
+   11      0.0884007   0.00538323        parabolic
+
+Optimization terminated successfully;
+The returned value satisfies the termination criteria
+(using xtol =  0.001 )
