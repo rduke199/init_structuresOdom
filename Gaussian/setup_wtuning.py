@@ -1,6 +1,7 @@
 import os
 from pymatgen.core import Molecule
 from pymatgen.io.gaussian import GaussianOutput
+from functions import find_ground_charge
 
 
 def write_xyz(in_file, out_dir):
@@ -32,7 +33,7 @@ job.mol = job.geo_opt()
 job.wtuning_cycle(max_cycles=0)""")
 
 
-def get_run_folders(molecule_dir, out_dir, nflag=''):
+def get_run_folders_w(molecule_dir, out_dir, nflag=''):
     mol_name = molecule_dir.split('/')[-1].split('.')[0]
     log_files = [x for x in os.listdir(molecule_dir) if x.endswith('opt_0.log')]
     xyz_files = [x for x in os.listdir(molecule_dir) if x.endswith('.xyz')]
@@ -63,7 +64,7 @@ def setup_a_folder(molpath, xyz_file, wtuning_path, charge=0):
     try:
         write_xyz(xyz_file, molpath)
         write_wtuning(molpath, charge)
-        get_run_folders(molpath, wtuning_path)
+        get_run_folders_w(molpath, wtuning_path)
         print("Done setting up wtuning for {}.".format(mol_name))
     except:
         print("Error setting up wtuning for {}!".format(mol_name))
@@ -76,16 +77,11 @@ def implement_setup(home):
 
     for mol in os.listdir(xyz_path):
         mol_name = mol.split('.')[0]
+        ground_charge = find_ground_charge(mol_name)
         xyz_file = os.path.join(xyz_path, mol)
         molpath = os.path.join(wtuning_path, mol_name)
 
-        if 'cp' in mol_name:
-            if 'whol' in mol_name:
-                setup_a_folder(molpath, xyz_file, wtuning_path, charge=2)
-            else:
-                setup_a_folder(molpath, xyz_file, wtuning_path, charge=1)
-        else:
-            setup_a_folder(molpath, xyz_file, wtuning_path, charge=0)
+        setup_a_folder(molpath, xyz_file, wtuning_path, charge=ground_charge)
 
 
 def main():
