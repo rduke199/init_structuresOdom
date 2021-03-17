@@ -58,14 +58,14 @@ def write_master_json(json_dir, master_json_file_path):
 
 
 home = os.getcwd()
-dft_runs_path = os.path.join(home, 'optimization/')
+opt_runs_path = os.path.join(home, 'optimization/')
 out_home = os.path.join(home, 'jsons_opt')
 if not os.path.isdir(out_home): os.mkdir(out_home)
 master_json_file = os.path.join(out_home, "master.json")
 
-mols = [m for m in os.listdir(dft_runs_path) if m.startswith('mol')]
+mols = [m for m in os.listdir(opt_runs_path) if m.startswith('mol')]
 for mol in mols:
-    molpath = os.path.join(dft_runs_path, mol)
+    molpath = os.path.join(opt_runs_path, mol)
     json_file = "{}/{}.json".format(out_home, mol)
     make_json_file(molpath, mol, json_file)
 

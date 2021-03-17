@@ -66,15 +66,15 @@ def write_master_json(json_dir, master_json_file):
 def main():
     # Establish paths that will be used
     home = os.getcwd()
-    dft_runs_path = os.path.join(home, 'wtuning/')
+    opt_runs_path = os.path.join(home, 'wtuning/')
     out_home = os.path.join(home, 'omegas')
     if not os.path.isdir(out_home): os.mkdir(out_home)
     master_json_file = os.path.join(out_home, "master_omegas.json")
 
     # Iterate through mol directories and gather information
-    mols = [m for m in os.listdir(dft_runs_path) if m.startswith('mol')]
+    mols = [m for m in os.listdir(opt_runs_path) if m.startswith('mol')]
     for mol in mols:
-        molpath = os.path.join(dft_runs_path, mol)
+        molpath = os.path.join(opt_runs_path, mol)
         json_file = "{}/omega_{}.json".format(out_home, mol)
         make_json(molpath, mol, json_file)
 

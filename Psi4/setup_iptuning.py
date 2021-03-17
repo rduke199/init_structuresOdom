@@ -1,15 +1,16 @@
 import os
 import re
-from pymatgen.core import Molecule
+from pymatgen.core.structure import Molecule
 
 
 def write_xyz(in_file, out_dir):
     """
     Write xyz file.
     """
+    molecule_name = in_file.split('/')[-1][:14]
     mol = Molecule.from_file(in_file)
-    fout = os.path.join(out_dir, in_file.split('/')[-1])
-    mol.to(filename=fout)
+    fout = os.path.join(out_dir, molecule_name+'.xyz')
+    mol.to(fmt='xyz', filename=fout)
 
 
 def write_ip_fitting(out_dir, charge=0, multiplicity=1):
@@ -42,7 +43,7 @@ with open(json_file,'w') as f:
 
 
 def gather_ipfitting_omega(out_file_path):
-    molecule_name = out_file_path.split('/')[-1]
+    molecule_name = out_file_path.split('/')[-1][:14]
     with open(out_file_path) as fn:
         out_data = fn.readlines()
         normal_line = out_data[-5]
@@ -55,7 +56,7 @@ def gather_ipfitting_omega(out_file_path):
 
 
 def get_run_folders(molecule_dir, out_dir, nflag=''):
-    mol_name = molecule_dir.split('/')[-1].split('.')[0]
+    mol_name = molecule_dir.split('/')[-1].split('.')[0][:14]
     out_files = [x for x in os.listdir(molecule_dir) if x.endswith('_ip_fitting.dat')]
     xyz_files = [x for x in os.listdir(molecule_dir) if x.endswith('.xyz')]
     if len(out_files) == 1:
@@ -83,24 +84,25 @@ def get_run_folders(molecule_dir, out_dir, nflag=''):
 
 
 def implement_setup(molpath, xyz_file, ipfitting_path, charge=0, multiplicity=1):
-    mol_name = (molpath.split('/')[-1]).split('.')[0]
+    mol_name = (molpath.split('/')[-1]).split('.')[0][:14]
     if not os.path.isdir(molpath): os.mkdir(molpath)
-    try:
-        # write_xyz(xyz_file, molpath)
-        write_ip_fitting(molpath, charge, multiplicity)
-        get_run_folders(molpath, ipfitting_path)
-        print("Done setting up ip fitting for {}.".format(mol_name))
-    except:
-        print("Error setting up ip fitting for {}!".format(mol_name))
+    # try:
+    print(xyz_file)
+    write_xyz(xyz_file, molpath)
+    write_ip_fitting(molpath, charge, multiplicity)
+    get_run_folders(molpath, ipfitting_path)
+    print("Done setting up ip fitting for {}.".format(mol_name))
+    # except:
+    #     print("Error setting up ip fitting for {}!".format(mol_name))
 
 
 def main():
     home = os.getcwd()
-    xyz_path = os.path.join(home, 'xyz/')
-    ipfitting_path = os.path.join(home, 'ipfitting/')
+    xyz_path = os.path.join(home, 'gaus_preopt/')
+    ipfitting_path = os.path.join(home, 'ipfitting2/')
 
     for mol in os.listdir(xyz_path):
-        mol_name = mol.split('.')[0]
+        mol_name = mol.split('.')[0][:14]
         xyz_file = os.path.join(xyz_path, mol)
         molpath = os.path.join(ipfitting_path, mol_name)
 

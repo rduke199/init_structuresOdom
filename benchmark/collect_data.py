@@ -103,14 +103,14 @@ def WriteMaster(json_dir,master_json_file):
     write_json(data, master_json_file)
 
 home = os.getcwd()
-dft_runs_path = os.path.join(home,'dft_runs/')
+opt_runs_path = os.path.join(home,'opt_runs/')
 out_home = os.path.join(home,'jsons/')
 funcitonals = ['LC-wHPBE','wB97XD']
 basis_sets = ['cc-pVDZ', '6-31+G**', 'TZVP', 'aug-cc-pVTZ']
 master_json_file =os.path.join(out_home,"master.json")
 
 for f in funcitonals:
-    fpath = os.path.join(dft_runs_path,f)
+    fpath = os.path.join(opt_runs_path,f)
     for b in basis_sets:
         bpath = os.path.join(fpath,b)
         for mol in os.listdir(bpath):

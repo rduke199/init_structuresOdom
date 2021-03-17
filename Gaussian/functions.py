@@ -1,6 +1,5 @@
 import os
 import re
-import json
 from pymatgen.core import Molecule
 from pymatgen.io.gaussian import GaussianInput
 
@@ -82,11 +81,20 @@ def get_in_out_paths(mol, in_dir, out_dir, cation='', log_end='.log'):
         raise UserWarning('No opt_0.log file found for {}'.format(mol_name))
 
 
+def get_out_paths(mol, out_dir, cation=''):
+    mol_name = mol.split('.')[0]
+    mol_out_path = os.path.join(out_dir, mol_name)
+    if not os.path.isdir(mol_out_path): os.mkdir(mol_out_path)
+    out_path = os.path.join(mol_out_path, cation)
+    if not os.path.isdir(out_path): os.mkdir(out_path)
+    return out_path
+
+
 def setup_a_folder(mol_name, in_file, out_path, runs_folder, omega=None, functional='LC-wHPBE', basis_set='TZVP',
                    charge=0, calculation='opt'):
     if not os.path.isdir(out_path): os.mkdir(out_path)
     try:
-        generate_gjf(in_file, out_path, functional, basis_set, calculation, omega=omega, charge=charge)
+        # generate_gjf(in_file, out_path, functional, basis_set, calculation, omega=omega, charge=charge)
         get_run_folders(out_path, runs_folder)  # , nflag=str(charge))
         print("Done setting up {} charge{} with {}/{}!".format(mol_name, charge, functional, basis_set))
     except:

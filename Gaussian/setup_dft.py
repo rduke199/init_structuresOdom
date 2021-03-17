@@ -1,6 +1,6 @@
 import os
 import json
-from functions import setup_a_folder, find_ground_charge, get_in_out_paths
+from functions import setup_a_folder, find_ground_charge, get_out_paths
 
 
 def main():
@@ -8,11 +8,11 @@ def main():
 
     # # NO OMEGA
     # in_file_path = os.path.join(home, 'xyz/')
-    # dft_dir = os.path.join(home, 'dft_Nomega/')
+    # opt_dir = os.path.join(home, 'opt_Nomega/')
 
     # OMEGA
     in_dir = os.path.join(home, 'wtuning/')
-    dft_dir = os.path.join(home, 'dft_omega/')
+    opt_dir = os.path.join(home, 'opt_omega/')
     omega_file = os.path.join(home, 'omegas/master_omegas_gaus.json')
     with open(omega_file, 'r') as fn:
         omega_dict = json.load(fn)
@@ -32,8 +32,8 @@ def main():
         charges = {'neutral': ground_charge, 'cation1': ground_charge+1, 'cation2': ground_charge+2}
         for name in charges.keys():
             try:
-                _, out_path = get_in_out_paths(mol, in_dir, dft_dir, cation=name)
-                setup_a_folder(mol_name, in_file, out_path, dft_dir, omega=omega, charge=charges[name])
+                out_path = get_out_paths(mol, opt_dir, cation=name)
+                setup_a_folder(mol_name, in_file, out_path, opt_dir, omega=omega, charge=charges[name])
             except UserWarning:
                 pass
 

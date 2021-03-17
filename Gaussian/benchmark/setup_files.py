@@ -43,13 +43,13 @@ def GetRunFolders(molecule_dir, out_dir, nflag='_'):
 
 home = os.getcwd()
 xyz_path = os.path.join(home, 'xyz/')
-dft_runs_path = os.path.join(home,'dft_runs/')
+opt_runs_path = os.path.join(home,'opt_runs/')
 
 funcitonals = ['LC-wHPBE','wB97XD']
 basis_sets = ['cc-pVDZ', '6-31+G**', 'TZVP', 'aug-cc-pVTZ']
 
 for f in funcitonals:
-    fpath = os.path.join(dft_runs_path,f)
+    fpath = os.path.join(opt_runs_path,f)
     if not os.path.isdir(fpath): os.mkdir(fpath)
     for b in basis_sets:
         bpath = os.path.join(fpath,b)
@@ -66,7 +66,7 @@ for f in funcitonals:
                 print("Done setting up {} with {}/{}!".format(mol_name, f, b))
             except:
                 print("Error. Calculation for {} with {}/{} was not set up.".format(mol_name, f, b))
-            GetRunFolders(molpath, dft_runs_path,nflag=f[0:2])
+            GetRunFolders(molpath, opt_runs_path,nflag=f[0:2])
 
             catpath = os.path.join(molpath, 'cation/')
             if not os.path.isdir(catpath): os.mkdir(catpath)
@@ -75,4 +75,4 @@ for f in funcitonals:
                 print("Done setting up {} cation with {}/{}!".format(mol_name, f, b))
             except:
                 print("Error. Calculation for {} cation with {}/{} was not set up.".format(mol_name, f, b))
-            GetRunFolders(catpath, dft_runs_path,nflag=str(f[0:2]+'cat'))
+            GetRunFolders(catpath, opt_runs_path,nflag=str(f[0:2]+'cat'))

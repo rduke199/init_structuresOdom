@@ -5,7 +5,7 @@ from functions import setup_a_folder, find_ground_charge, get_in_out_paths
 
 def main():
     home = os.getcwd()
-    in_dir = os.path.join(home, 'dft_omega')
+    in_dir = os.path.join(home, 'opt_omega')
     freq_dir = os.path.join(home, 'freq/')
     omega_file = os.path.join(home, 'omegas/master_omegas_gaus.json')
     with open(omega_file, 'r') as fn:
