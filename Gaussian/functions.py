@@ -1,24 +1,25 @@
 import os
 import re
+import json
 from pymatgen.core import Molecule
 from pymatgen.io.gaussian import GaussianInput
 
 
-def generate_gjf(in_fn, out_dir, functional, basis_set, calculation, omega=None, charge=0):
+def generate_gjf(in_fn, out_dir, functional, basis_set, omega=None, charge=0):
     """
     Convert an individually inputted xyz file to a gjf Gaussian input file
     """
     mol = Molecule.from_file(in_fn)
     mol_name = in_fn.split('/')[-1][:14]
-    if omega is None:
-        gau = GaussianInput(mol=mol, charge=charge, functional=functional, basis_set=basis_set,
-                            route_parameters={calculation: '', 'SCF': '(MaxCycle=250)'},
-                            link0_parameters={'%mem': '5GB', '%chk': '{}.chk'.format(mol_name)})
+    route_parameters = {'Opt Freq': '', 'SCF': '(MaxCycle=250)'}
+    link0_parameters = {'%mem': '5GB', '%oldchk': '{}.chk'.format(mol_name), '%chk': 'freq.chk'}
+    if omega is not None:
+        route_parameters["iop(3/107={}, 3/108={})".format(omega, omega)] = ''
     else:
-        gau = GaussianInput(mol=mol, charge=charge, functional=functional, basis_set=basis_set,
-                            route_parameters={'iop(3/107={}, 3/108={})'.format(omega, omega): '', calculation: '',
-                                              'SCF': '(MaxCycle=250)'},
-                            link0_parameters={'%mem': '5GB', '%chk': '{}.chk'.format(mol_name)})
+        pass
+    gau = GaussianInput(mol=mol, charge=charge, functional=functional, basis_set=basis_set,
+                        route_parameters=route_parameters,
+                        link0_parameters=link0_parameters)
     gjf_file = gau.write_file('{}/{}.gjf'.format(out_dir, mol_name))
     return gjf_file
 
@@ -94,9 +95,54 @@ def setup_a_folder(mol_name, in_file, out_path, runs_folder, omega=None, functio
                    charge=0, calculation='opt'):
     if not os.path.isdir(out_path): os.mkdir(out_path)
     try:
-        # generate_gjf(in_file, out_path, functional, basis_set, calculation, omega=omega, charge=charge)
-        get_run_folders(out_path, runs_folder)  # , nflag=str(charge))
+        generate_gjf(in_file, out_path, functional, basis_set, omega=omega, charge=charge)
+        txt_file = os.path.join(runs_folder, 'folders_to_run.txt')
+        with open(txt_file, 'a+') as fn:
+            fn.write(out_path + '\n')
         print("Done setting up {} charge{} with {}/{}!".format(mol_name, charge, functional, basis_set))
     except:
         print("Error. Calculation for {} charge{} with {}/{} was not set up.".format(mol_name, charge, functional,
                                                                                      basis_set))
+
+def write_json(data, filename):
+    with open(filename, 'w') as f:
+        json.dump(data, f, indent=2)
+
+
+def runtime_from_log(logfile):
+    """
+    Collects runtime in core hours from a logfile
+    """
+    time_patt = re.compile(r"\d+\.d+|\d+")
+    time_data = []
+    with open(logfile, "r") as f:
+        line = f.readline()
+        while line != "":
+            if re.match("Job cpu time", line.strip()):
+                time_data.extend(time_patt.findall(line))
+            line = f.readline()
+    if time_data:
+        time_data = [float(time) for time in time_data]
+        runtime = (time_data[0] * 86400 + time_data[1] * 3600 + time_data[2] * 60 + time_data[3]) / 3600
+    else:
+        runtime = 0
+    return round(runtime, 3)
+
+
+def write_master_json(json_dir, master_json_file, prop=None):
+    """
+    Write a master data file from all json files in json_dir
+    """
+    data = {}
+    json_files = [f for f in os.listdir(json_dir) if f.startswith("mol")]
+    for f in json_files:
+        fpath = os.path.join(json_dir, f)
+        with open(fpath) as fn:
+            mol_info = json.load(fn)
+        mol_name = mol_info["molecule_name"]
+        if prop is None:
+            data[mol_name] = mol_info
+        else:
+            prop_info = mol_info[prop]
+            data[mol_name] = prop_info
+    write_json(data, master_json_file)

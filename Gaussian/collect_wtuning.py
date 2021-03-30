@@ -1,31 +1,5 @@
 import os
-import re
-import json
-
-
-def write_json(data, filename):
-    with open(filename, 'w') as f:
-        json.dump(data, f, indent=2)
-
-
-def runtime_from_log(logfile):
-    """
-    Collects runtime in core hours from a logfile
-    """
-    time_patt = re.compile(r"\d+\.d+|\d+")
-    time_data = []
-    with open(logfile, "r") as f:
-        line = f.readline()
-        while line != "":
-            if re.match("Job cpu time", line.strip()):
-                time_data.extend(time_patt.findall(line))
-            line = f.readline()
-    if time_data:
-        time_data = [float(time) for time in time_data]
-        runtime = (time_data[0] * 86400 + time_data[1] * 3600 + time_data[2] * 60 + time_data[3]) / 3600
-    else:
-        runtime = 0
-    return round(runtime, 3)
+from functions import write_json, runtime_from_log, write_master_json
 
 
 def make_json(mol_dir, mol_name, json_file):
@@ -50,19 +24,6 @@ def make_json(mol_dir, mol_name, json_file):
         print("Error. Omega value NOT collected for {}. wtuning may not have finished!".format(mol_name))
 
 
-def write_master_json(json_dir, master_json_file):
-    """
-    Write a master data file from all json files in json_dir
-    """
-    data = {}
-    for f in os.listdir(json_dir):
-        fpath = os.path.join(json_dir, f)
-        with open(fpath) as fn:
-            mol_info = json.load(fn)
-            data[mol_info["molecule_name"]] = mol_info["omega"]
-    write_json(data, master_json_file)
-
-
 def main():
     # Establish paths that will be used
     home = os.getcwd()
@@ -78,7 +39,7 @@ def main():
         json_file = "{}/omega_{}.json".format(out_home, mol)
         make_json(molpath, mol, json_file)
 
-    write_master_json(out_home, master_json_file)
+    write_master_json(out_home, master_json_file, prop='omega')
 
 
 if __name__ == "__main__":
