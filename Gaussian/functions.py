@@ -5,54 +5,75 @@ from pymatgen.core import Molecule
 from pymatgen.io.gaussian import GaussianInput
 
 
-def generate_gjf(in_fn, out_dir, functional, basis_set, omega=None, charge=0):
+def generate_gjf(in_fn, out_dir, functional='LC-wHPBE', basis_set='TZVP', charge=0, calculation='opt', omega=None,
+                 oldchk=None):
     """
     Convert an individually inputted xyz file to a gjf Gaussian input file
     """
     mol = Molecule.from_file(in_fn)
+    mol.perturb(0.1)
     mol_name = in_fn.split('/')[-1][:14]
-    route_parameters = {'Opt Freq': '', 'SCF': '(MaxCycle=250)'}
-    link0_parameters = {'%mem': '5GB', '%oldchk': '{}.chk'.format(mol_name), '%chk': 'freq.chk'}
+    link0_parameters = {'%mem': '5GB', '%chk': '{}.chk'.format(calculation)}
+    if calculation == 'tddft':
+        route_parameters = {'TD(NStates=5, 50-50)': ''}
+    else:
+        route_parameters = {calculation: '', 'SCF': '(MaxCycle=250)', 'Int': '(Grid=Ultrafine)'}
     if omega is not None:
         route_parameters["iop(3/107={}, 3/108={})".format(omega, omega)] = ''
+    else:
+        pass
+    if oldchk:
+        link0_parameters['%oldchk'] = '{}.chk'.format(oldchk)
+        route_parameters['Geom'] = 'AllCheck'
     else:
         pass
     gau = GaussianInput(mol=mol, charge=charge, functional=functional, basis_set=basis_set,
                         route_parameters=route_parameters,
                         link0_parameters=link0_parameters)
-    gjf_file = gau.write_file('{}/{}.gjf'.format(out_dir, mol_name))
+    gjf_file = gau.write_file('{}/{}.gjf'.format(out_dir, calculation))
     return gjf_file
 
 
 def get_run_folders(molecule_dir, out_dir, nflag=''):
     mol_name = molecule_dir.split('/')[-1].split('.')[0]
-    log_files = [x for x in os.listdir(molecule_dir) if x.endswith('.log') and not x.endswith('deg.log')]
-    gjf_files = [x for x in os.listdir(molecule_dir) if x.endswith('.gjf')]
+    opt_log = os.path.join(molecule_dir, 'opt.log')
+    opt_gjf = os.path.join(molecule_dir, 'opt.gjf')
+    freq_gjf = os.path.join(molecule_dir, 'freq.gjf')
+    tddft_gjf = os.path.join(molecule_dir, 'tddft.gjf')
+    if os.path.isfile(tddft_gjf):
+        txt_file = os.path.join(out_dir, 'folders_to_run_tddft.txt')
+        with open(txt_file, 'a+') as fn:
+            fn.write(molecule_dir + '\n')
+        return None
     normal = None
-    if len(log_files) == 1:
-        with open(os.path.join(molecule_dir, log_files[0])) as fn:
+    if os.path.isfile(opt_log):
+        with open(opt_log) as fn:
             log_fn = fn.readlines()
         for line in log_fn:
             if re.search(' Optimized Parameters', line):
                 last_line = log_fn[-1]
                 if re.search('Normal termination', last_line):
-                    normal = 1
-                    break
+                    if os.path.isfile(freq_gjf):
+                        txt_file = os.path.join(out_dir, 'folders_to_run_freq.txt')
+                        with open(txt_file, 'a+') as fn:
+                            fn.write(molecule_dir + '\n')
+                    else:
+                        print("{} is finished optimizing, but there is not freq.gjf file.".format(mol_name))
+                    return None
             if re.search('Error termination', line):
                 normal = 0
+                txt_file = os.path.join(out_dir, 'folders_to_run{}.txt'.format(nflag))
+                with open(txt_file, 'a+') as fn:
+                    fn.write(molecule_dir + '\n')
                 print("Error in termination for {}".format(mol_name))
+                return None
+
     else:
-        normal = 0
-        print("{} has {} log file(s).".format(mol_name, len(log_files)))
-    if normal is None:
-        if len(gjf_files) == 0:
-            print("Error. {} does not contain a gjf file.".format(mol_name))
-        else:
-            print("{} may still be running".format(mol_name))
-    if normal == 0:
-        txt_file = os.path.join(out_dir, 'folders{}_to_run.txt'.format(nflag))
-        with open(txt_file, 'a+') as fn:
-            fn.write(molecule_dir + '\n')
+        print("{} does not have an opt.log file.")
+    if os.path.isfile(opt_gjf):
+        print("{} may still be running".format(mol_name))
+    else:
+        print("Error. {} does not contain a gjf file.".format(mol_name))
 
 
 def find_ground_charge(mol_name):
@@ -82,27 +103,26 @@ def get_in_out_paths(mol, in_dir, out_dir, cation='', log_end='.log'):
         raise UserWarning('No opt_0.log file found for {}'.format(mol_name))
 
 
-def get_out_paths(mol, out_dir, cation=''):
+def get_out_paths(mol, out_dir, cation='', subtype=''):
     mol_name = mol.split('.')[0]
     mol_out_path = os.path.join(out_dir, mol_name)
     if not os.path.isdir(mol_out_path): os.mkdir(mol_out_path)
-    out_path = os.path.join(mol_out_path, cation)
+    out_path = os.path.join(mol_out_path, cation, subtype)
     if not os.path.isdir(out_path): os.mkdir(out_path)
     return out_path
 
 
-def setup_a_folder(mol_name, in_file, out_path, runs_folder, omega=None, functional='LC-wHPBE', basis_set='TZVP',
-                   charge=0, calculation='opt'):
+def setup_a_folder(mol_name, in_file, out_path, runs_folder, charge=0, calculation='opt', **kwargs):
     if not os.path.isdir(out_path): os.mkdir(out_path)
-    try:
-        generate_gjf(in_file, out_path, functional, basis_set, omega=omega, charge=charge)
-        txt_file = os.path.join(runs_folder, 'folders_to_run.txt')
-        with open(txt_file, 'a+') as fn:
-            fn.write(out_path + '\n')
-        print("Done setting up {} charge{} with {}/{}!".format(mol_name, charge, functional, basis_set))
-    except:
-        print("Error. Calculation for {} charge{} with {}/{} was not set up.".format(mol_name, charge, functional,
-                                                                                     basis_set))
+    # try:
+    generate_gjf(in_file, out_path, charge=charge, calculation=calculation, **kwargs)
+    # txt_file = os.path.join(runs_folder, 'folders_to_run.txt')
+    # with open(txt_file, 'a+') as fn:
+    #     fn.write(out_path + '\n')
+    print("Done setting up {} charge{}!".format(mol_name, charge))
+    # except:
+    #     print("Error. Calculation for {} charge{} was not set up.".format(mol_name, charge))
+
 
 def write_json(data, filename):
     with open(filename, 'w') as f:
