@@ -1,4 +1,4 @@
-from functions import *
+from Gaussian.old_scripts.functions import *
 
 
 def main():
@@ -9,7 +9,7 @@ def main():
     # opt_dir = os.path.join(home, 'opt_Nomega/')
 
     # OMEGA
-    in_dir = os.path.join(home, 'wtuning/')
+    in_dir = os.path.join(home, '../wtuning/')
     opt_dir = os.path.join(home, 'opt_omega/')
     omega_file = os.path.join(home, 'omegas/master_omegas_gaus.json')
     with open(omega_file, 'r') as fn:

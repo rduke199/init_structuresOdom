@@ -1,4 +1,4 @@
-from functions import *
+from Gaussian.old_scripts.functions import *
 
 
 def main():

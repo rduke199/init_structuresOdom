@@ -2,7 +2,7 @@ import os
 import re
 import json
 from pymatgen.core import Molecule
-from pymatgen.io.gaussian import GaussianInput
+from pymatgen.io.gaussian import GaussianInput, GaussianOutput
 
 
 def generate_gjf(in_fn, out_dir, functional='LC-wHPBE', basis_set='TZVP', charge=0, calculation='opt', omega=None,
@@ -14,19 +14,14 @@ def generate_gjf(in_fn, out_dir, functional='LC-wHPBE', basis_set='TZVP', charge
     mol.perturb(0.1)
     mol_name = in_fn.split('/')[-1][:14]
     link0_parameters = {'%mem': '5GB', '%chk': '{}.chk'.format(calculation)}
+    route_parameters = {calculation: '', 'SCF': '(MaxCycle=250)', 'Int': '(Grid=Ultrafine)'}
     if calculation == 'tddft':
         route_parameters = {'TD(NStates=5, 50-50)': ''}
-    else:
-        route_parameters = {calculation: '', 'SCF': '(MaxCycle=250)', 'Int': '(Grid=Ultrafine)'}
     if omega is not None:
         route_parameters["iop(3/107={}, 3/108={})".format(omega, omega)] = ''
-    else:
-        pass
     if oldchk:
         link0_parameters['%oldchk'] = '{}.chk'.format(oldchk)
         route_parameters['Geom'] = 'AllCheck'
-    else:
-        pass
     gau = GaussianInput(mol=mol, charge=charge, functional=functional, basis_set=basis_set,
                         route_parameters=route_parameters,
                         link0_parameters=link0_parameters)
@@ -40,10 +35,15 @@ def get_run_folders(molecule_dir, out_dir, nflag=''):
     opt_gjf = os.path.join(molecule_dir, 'opt.gjf')
     freq_gjf = os.path.join(molecule_dir, 'freq.gjf')
     tddft_gjf = os.path.join(molecule_dir, 'tddft.gjf')
+    tddft_log = os.path.join(molecule_dir, 'tddft.log')
     if os.path.isfile(tddft_gjf):
-        txt_file = os.path.join(out_dir, 'folders_to_run_tddft.txt')
-        with open(txt_file, 'a+') as fn:
-            fn.write(molecule_dir + '\n')
+        mol_tddft = GaussianOutput(tddft_log)
+        if mol_tddft.properly_terminated:
+            print("{} TD-DFT terminated normally".format(mol_name))
+        else:
+            txt_file = os.path.join(out_dir, 'folders_to_run_tddft.txt')
+            with open(txt_file, 'a+') as fn:
+                fn.write(molecule_dir + '\n')
         return None
     normal = None
     if os.path.isfile(opt_log):
