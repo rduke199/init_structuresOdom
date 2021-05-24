@@ -21,13 +21,13 @@ class SetUpGaus:
         self.wtuning_dir = os.path.join(self.mol_dir, 'wtuning/')
         self.wtuning_log = os.path.join(self.wtuning_dir, self.mol_name+'_opt_0.log')
 
-        if not os.path.isdir(self.mol_dir):
-            os.mkdir(self.mol_dir)
-        if not os.path.isdir(self.wtuning_dir):
-            os.mkdir(self.wtuning_dir)
+        if not os.path.isdir(self.mol_dir): os.mkdir(self.mol_dir)
+        if not os.path.isdir(self.wtuning_dir): os.mkdir(self.wtuning_dir)
 
     def get_mol_calc_path(self, cation_name):
-        return os.path.join(self.mol_dir, cation_name)
+        path = os.path.join(self.mol_dir, cation_name)
+        if not os.path.isdir(path): os.mkdir(path)
+        return path
 
     def get_log(self, cation_name, calc_type):
         return os.path.join(self.mol_dir, cation_name, calc_type+'.log')
@@ -66,17 +66,30 @@ class SetUpGaus:
         """
         Write python setup file for wtuning job
         """
-        fout = os.path.join(out_dir, 'old_scripts/wtuning.py')
+        fout = os.path.join(out_dir, 'wtuning.py')
         with open(fout, 'w+') as wt:
             wt.write("""from sys import argv
 from ocelot.task.wtuning import WtuningJob
 from pymatgen.core.structure import Molecule
 
+route_parameters = {
+    'scf': {
+        'xqc': '',
+        'fermi': '',
+        'noincfock': '',
+        'novaracc': '',
+        'ndamp': '35',
+        'conver': '6',
+        'vshift': '500'
+    }, 
+    'Int': '(Grid=SuperFine)'
+}
+
 fin = argv[1]
 name = (fin.split('/')[-1]).split('.')[0]
 pymol = Molecule.from_file(fin)
 pymol.perturb(0.05)
-job = WtuningJob(func='LC-wHPBE', basis='TZVP',name=name,nproc=8,mem=30,n_charge=""" + str(charge) + """,n_spin=1,scheme='Jh')
+job = WtuningJob(func='LC-wHPBE', basis='TZVP',name=name,rps=route_parameters,nproc=8,mem=30,n_charge=""" + str(charge) + """,n_spin=1,scheme='Jh')
 job.mol = pymol
 job.mol = job.geo_opt()
 job.wtuning_cycle(max_cycles=0)""")
@@ -86,7 +99,6 @@ job.wtuning_cycle(max_cycles=0)""")
         # Convert an individually inputted xyz file to a gjf Gaussian input file
         mol = Molecule.from_file(in_fn)
         mol.perturb(0.1)
-        mol_name = in_fn.split('/')[-1][:14]
         link0_parameters = {'%mem': '5GB', '%chk': '{}.chk'.format(calculation)}
         route_parameters = {calculation: '', 'SCF': '(MaxCycle=250)', 'Int': '(Grid=SuperFine)'}
         if calculation == 'tddft':
